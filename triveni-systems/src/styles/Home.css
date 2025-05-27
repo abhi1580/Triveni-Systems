@@ -1,0 +1,165 @@
+:root {
+  --primary-blue: #1193F7;
+  --accent-yellow: #F3B72A;
+  --light-gray: #D9DCD6;
+  --dark-navy: #0D214E;
+  --near-black: #151414;
+  --off-white: #F8F8F8;
+}
+
+/* General Styles */
+.home-page {
+  background-color: var(--dark-navy);
+  color: var(--near-black);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: var(--dark-navy);
+  padding: 60px 0;
+  height: 60vh;
+}
+
+.hero-section h1 {
+  color: var(--off-white);
+  font-weight: 700;
+}
+
+.hero-section p.lead {
+  color: var(--light-gray);
+  font-size: 1.25rem;
+}
+
+.hero-section .btn-primary {
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  transition: background-color 0.3s ease;
+}
+
+.hero-section .btn-primary:hover {
+  background-color: var(--accent-yellow);
+  border-color: var(--accent-yellow);
+  color: var(--near-black);
+}
+
+.hero-section .btn-outline-light {
+  border-color: var(--off-white);
+  color: var(--off-white);
+}
+
+.hero-section .btn-outline-light:hover {
+  background-color: var(--accent-yellow);
+  border-color: var(--accent-yellow);
+  color: var(--near-black);
+}
+
+/* About Section */
+.about-section {
+  background-color: var(--light-gray);
+}
+
+.about-section h2 {
+  color: var(--dark-navy);
+}
+
+.about-section p {
+  color: var(--near-black);
+}
+
+.about-section img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.about-section .btn-primary {
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+}
+
+.about-section .btn-primary:hover {
+  background-color: var(--accent-yellow);
+  border-color: var(--accent-yellow);
+  color: var(--near-black);
+}
+
+/* Services Section */
+.services-section {
+  background-color: var(--accent-yellow);
+}
+
+.services-section h2 {
+  color: var(--dark-navy);
+}
+
+.services-section .card {
+  background-color: var(--off-white);
+  border: 1px solid var(--light-gray);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services-section .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.services-section .card-title {
+  color: var(--dark-navy);
+}
+
+.services-section .card-text {
+  color: var(--near-black);
+}
+
+.services-section .btn-link {
+  color: var(--primary-blue);
+}
+
+.services-section .btn-link:hover {
+  color: var(--accent-yellow);
+  text-decoration: none;
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+  background-color: var(--off-white);
+}
+
+.why-choose-us h2 {
+  color: var(--dark-navy);
+}
+
+.why-choose-us h4 {
+  color: var(--primary-blue);
+}
+
+.why-choose-us p {
+  color: var(--near-black);
+}
+
+.why-choose-us i {
+  color: var(--primary-blue);
+}
+
+/* Testimonials Section */
+.testimonials {
+  background-color: var(--primary-blue);
+}
+
+.testimonials h2 {
+  color: var(--dark-navy);
+}
+
+.testimonials .card {
+  background-color: var(--off-white);
+  border: 1px solid var(--light-gray);
+}
+
+.testimonials .card-text {
+  color: var(--near-black);
+}
+
+.testimonials .card-footer {
+  background-color: var(--light-gray);
+  color: var(--dark-navy);
+}

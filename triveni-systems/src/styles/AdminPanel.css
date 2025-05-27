@@ -1,0 +1,24 @@
+.admin-panel {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.admin-panel h2 {
+  font-weight: bold;
+}
+
+.admin-panel h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .admin-panel h2 {
+    font-size: 1.5rem;
+  }
+}

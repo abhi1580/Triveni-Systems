@@ -1,0 +1,116 @@
+/* Career.css */
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+  color: white;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.hero-section h1 {
+  font-size: 2.75rem;
+  font-weight: bold;
+}
+
+.hero-section p {
+  font-size: 1.1rem;
+}
+
+/* Job Cards */
+.card {
+  border: none;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.3rem;
+  color: var(--primary-blue);
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: var(--pure-black);
+}
+
+/* Culture Section */
+.culture-section h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.culture-section p {
+  font-size: 0.95rem;
+  color: var(--dark-gray);
+}
+
+/* Form Styles */
+form label {
+  font-weight: 500;
+}
+
+form .form-control {
+  border-radius: 0.5rem;
+}
+
+form button {
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background-color: var(--dark-blue);
+  color: #fff;
+}
+
+/* FAQ Accordion */
+.faq-section h2 {
+  color: var(--dark-blue);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--light-gray);
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+.accordion-body {
+  font-size: 0.95rem;
+}
+
+/* Contact CTA */
+.contact-cta {
+  background-color: var(--primary-blue);
+  border-radius: 1rem;
+}
+
+.contact-cta h3 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.contact-cta p {
+  font-size: 1.05rem;
+}
+
+.contact-cta .btn {
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 50px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.contact-cta .btn:hover {
+  background-color: white;
+  color: var(--primary-blue);
+}

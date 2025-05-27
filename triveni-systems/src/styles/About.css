@@ -1,0 +1,106 @@
+/* About.css */
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+  padding: 5rem 0;
+  color: white;
+}
+
+.hero-section h1 {
+  font-size: 2.75rem;
+  font-weight: bold;
+}
+
+.hero-section p {
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+/* Section Headings */
+.about-page h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--dark-blue);
+}
+
+/* Paragraphs */
+.about-page p {
+  font-size: 1rem;
+  color: var(--dark-gray);
+}
+
+/* Values Cards */
+.about-page .card {
+  border: none;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-page .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.about-page .card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+}
+
+.about-page .card-text {
+  font-size: 0.95rem;
+  color: var(--dark-gray);
+}
+
+/* Leadership Cards */
+.about-page .card-subtitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Metrics Section */
+.about-page .text-center h2 {
+  margin-bottom: 2rem;
+}
+
+.about-page .text-center h3 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.about-page .text-center p {
+  font-size: 0.95rem;
+  color: var(--dark-gray);
+}
+
+/* CTA Section */
+.contact-cta {
+  background-color: var(--primary-blue);
+  border-radius: 1rem;
+  color: white;
+}
+
+.contact-cta h3 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.contact-cta p {
+  font-size: 1.05rem;
+}
+
+.contact-cta .btn {
+  font-weight: 600;
+  padding: 0.7rem 2rem;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-cta .btn:hover {
+  background-color: white;
+  color: var(--primary-blue);
+}

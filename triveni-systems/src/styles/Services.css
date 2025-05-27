@@ -1,0 +1,107 @@
+/* Services.css */
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+  color: white;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.hero-section h1 {
+  font-size: 2.75rem;
+  font-weight: bold;
+}
+
+.hero-section p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Services Cards */
+.services-page .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 1rem;
+}
+
+.services-page .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.services-page .card-title {
+  color: var(--primary-blue);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.services-page .card-text {
+  font-size: 0.95rem;
+  color: var(--pure-black);
+}
+
+/* Technologies Section */
+.tech-stack {
+  background-color: var(--off-white);
+}
+
+.tech-stack h2 {
+  color: var(--dark-blue);
+}
+
+.tech-stack .badge {
+  background-color: var(--primary-blue);
+  color: white;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+/* Testimonials Section */
+.testimonials h2 {
+  color: var(--dark-blue);
+}
+
+.testimonials .card {
+  background-color: var(--off-white);
+  border: none;
+  border-radius: 0.75rem;
+}
+
+.testimonials .blockquote {
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.testimonials .blockquote-footer {
+  color: var(--dark-gray);
+  font-weight: 500;
+}
+
+/* Contact CTA Section */
+.contact-cta {
+  background-color: var(--primary-blue);
+}
+
+.contact-cta h3 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.contact-cta p {
+  font-size: 1.05rem;
+}
+
+.contact-cta .btn {
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 50px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.contact-cta .btn:hover {
+  background-color: white;
+  color: var(--primary-blue);
+}
