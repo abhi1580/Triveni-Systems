@@ -5,30 +5,50 @@
   --dark-navy: #0D214E;
   --near-black: #151414;
   --off-white: #F8F8F8;
+  --gray-100: #F0F0F0;
+  --gray-200: #E0E0E0;
+  --gray-700: #333;
+  --gray-500: #808080;
+  --primary-blue-dark: #0D214E;
+  --primary-blue-light: #1193F7;
+  --spacing-3xl: 4rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-md: 1rem;
+  --spacing-sm: 0.75rem;
+  --spacing-xs: 0.5rem;
+  --font-size-xl: 1.5rem;
+  --font-size-lg: 1.25rem;
+  --font-size-sm: 0.875rem;
+  --radius-lg: 8px;
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* General Styles */
 .home-page {
-  background-color: var(--dark-navy);
+  background-color: var(--gray-100);
   color: var(--near-black);
   font-family: 'Arial', sans-serif;
 }
 
 /* Hero Section */
 .hero-section {
-  background-color: var(--dark-navy);
-  padding: 60px 0;
-  height: 60vh;
+  background: linear-gradient(135deg, var(--primary-blue-dark), var(--primary-blue));
+  padding: var(--spacing-3xl) 0;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
 }
 
 .hero-section h1 {
-  color: var(--off-white);
-  font-weight: 700;
+  color: var(--gray-100);
+  margin-bottom: var(--spacing-lg);
 }
 
 .hero-section p.lead {
-  color: var(--light-gray);
-  font-size: 1.25rem;
+  color: var(--gray-200);
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-xl);
 }
 
 .hero-section .btn-primary {
@@ -56,20 +76,23 @@
 
 /* About Section */
 .about-section {
-  background-color: var(--light-gray);
+  background-color: var(--gray-100);
+  padding: var(--spacing-3xl) 0;
 }
 
 .about-section h2 {
-  color: var(--dark-navy);
+  color: var(--primary-blue-dark);
 }
 
 .about-section p {
-  color: var(--near-black);
+  color: var(--gray-700);
+  margin-bottom: var(--spacing-lg);
 }
 
 .about-section img {
   max-width: 100%;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
 }
 
 .about-section .btn-primary {
@@ -85,30 +108,30 @@
 
 /* Services Section */
 .services-section {
-  background-color: var(--accent-yellow);
-}
-
-.services-section h2 {
-  color: var(--dark-navy);
+  background-color: var(--gray-200);
+  padding: var(--spacing-3xl) 0;
 }
 
 .services-section .card {
-  background-color: var(--off-white);
-  border: 1px solid var(--light-gray);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.services-section .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  border: none;
+  padding: var(--spacing-lg);
 }
 
 .services-section .card-title {
-  color: var(--dark-navy);
+  color: var(--primary-blue);
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-md);
 }
 
 .services-section .card-text {
-  color: var(--near-black);
+  color: var(--gray-700);
+}
+
+.services-section .service-icon {
+  font-size: var(--font-size-3xl);
+  color: var(--primary-blue);
+  margin-bottom: var(--spacing-md);
 }
 
 .services-section .btn-link {
@@ -122,44 +145,67 @@
 
 /* Why Choose Us Section */
 .why-choose-us {
-  background-color: var(--off-white);
+  background-color: var(--gray-100);
+  padding: var(--spacing-3xl) 0;
 }
 
-.why-choose-us h2 {
-  color: var(--dark-navy);
+.why-choose-us .feature-box {
+  text-align: center;
+  padding: var(--spacing-lg);
+}
+
+.why-choose-us .feature-icon {
+  font-size: var(--font-size-3xl);
+  color: var(--primary-blue);
+  margin-bottom: var(--spacing-md);
 }
 
 .why-choose-us h4 {
-  color: var(--primary-blue);
+  color: var(--primary-blue-dark);
+  margin-bottom: var(--spacing-sm);
 }
 
 .why-choose-us p {
-  color: var(--near-black);
-}
-
-.why-choose-us i {
-  color: var(--primary-blue);
+  color: var(--gray-700);
 }
 
 /* Testimonials Section */
 .testimonials {
-  background-color: var(--primary-blue);
-}
-
-.testimonials h2 {
-  color: var(--dark-navy);
+  background-color: var(--primary-blue-light);
+  padding: var(--spacing-3xl) 0;
 }
 
 .testimonials .card {
-  background-color: var(--off-white);
-  border: 1px solid var(--light-gray);
+  margin: var(--spacing-md);
+  border: none;
 }
 
-.testimonials .card-text {
-  color: var(--near-black);
+.testimonials .testimonial-text {
+  font-size: var(--font-size-lg);
+  color: var(--gray-700);
+  font-style: italic;
+  margin-bottom: var(--spacing-md);
 }
 
-.testimonials .card-footer {
-  background-color: var(--light-gray);
-  color: var(--dark-navy);
+.testimonials .client-info {
+  display: flex;
+  align-items: center;
+}
+
+.testimonials .client-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: var(--spacing-md);
+}
+
+.testimonials .client-name {
+  color: var(--primary-blue-dark);
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.testimonials .client-position {
+  color: var(--gray-500);
+  font-size: var(--font-size-sm);
 }
