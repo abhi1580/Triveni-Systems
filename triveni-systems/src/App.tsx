@@ -22,6 +22,7 @@ function App() {
             <Route path="/career" element={<Career />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
             <Route
               path="/admin"
               element={
@@ -31,7 +32,7 @@ function App() {
               }
             />
           </Route>
-          <Route path="/login" element={<Login />} />
+         
         </Routes>
       </BrowserRouter>
     </AuthProvider>
