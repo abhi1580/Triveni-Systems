@@ -8,7 +8,7 @@ const Footer = () => {
         <Row className="py-8">
           <Col md={3} className="mb-6">
             <h5 className="footer-title">Triveni Systems</h5>
-            <p className="footer-text">At Triveni Systems, we deliver innovative IT solutions designed for today’s digital world. From web and mobile development to enterprise software, we help businesses thrive through smart, scalable technology. Our focus is on driving efficiency, growth, and digital transformation.</p>
+            <p className="footer-text">At Triveni Systems, we deliver innovative IT solutions designed for today's digital world. From web and mobile development to enterprise software, we help businesses thrive through smart, scalable technology. Our focus is on driving efficiency, growth, and digital transformation.</p>
           </Col>
           <Col md={3} className="mb-6">
             <h5 className="footer-title">Quick Links</h5>
@@ -19,7 +19,7 @@ const Footer = () => {
               <li><a href="/contact" className="footer-link">Contact Us</a></li>
             </ul>
           </Col>
-          <Col md={3}>
+          <Col md={3} className="mb-6">
             <h5 className="footer-title">Newsletter</h5>
             <p className="footer-text">Subscribe to our newsletter for the latest updates.</p>
             <div className="newsletter-form">
@@ -32,13 +32,13 @@ const Footer = () => {
               <button className="newsletter-button">Subscribe</button>
             </div>
           </Col>
-          <Col md={3} className="mb-6">
+          <Col md={3}>
             <h5 className="footer-title">Follow Us</h5>
             <div className="social-links">
-              <a href="#" className="footer-social"><i className="fab fa-facebook-f"></i></a>
-              <a href="#" className="footer-social"><i className="fab fa-twitter"></i></a>
-              <a href="#" className="footer-social"><i className="fab fa-linkedin-in"></i></a>
-              <a href="#" className="footer-social"><i className="fab fa-instagram"></i></a>
+              <a href="#" className="footer-social" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
+              <a href="#" className="footer-social" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
+              <a href="#" className="footer-social" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
+              <a href="#" className="footer-social" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
             </div>
           </Col>
         </Row>
@@ -49,6 +49,16 @@ const Footer = () => {
           </Col>
         </Row>
       </Container>
+      <a 
+        href="https://wa.me/919146334963" 
+        className="whatsapp-float" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+      >
+        <i className="fab fa-whatsapp"></i>
+        <span className="whatsapp-tooltip">Get Quick Question</span>
+      </a>
     </footer>
   );
 };
