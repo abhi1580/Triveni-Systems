@@ -17,7 +17,7 @@ const Home = () => {
           <Link to="/services" className="btn btn-primary btn-lg me-3">
             <i className="fas fa-cogs me-2"></i>Explore Our Services
           </Link>
-          <Link to="/contact" className="btn btn-outline-light btn-lg">
+          <Link to="/contact" className="btn btn-secondary btn-lg">
             <i className="fas fa-envelope me-2"></i>Contact Us
           </Link>
         </Container>
