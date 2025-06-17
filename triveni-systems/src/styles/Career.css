@@ -1,116 +1,262 @@
 /* Career.css */
 
+/* Career Page Specific Styles */
+.career-page {
+  background-color: var(--gray-100);
+}
+
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
-  color: white;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  background: linear-gradient(135deg, var(--primary-blue-dark), var(--primary-blue));
+  padding: var(--spacing-3xl) 0;
+  color: var(--gray-100);
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .hero-section h1 {
-  font-size: 2.75rem;
-  font-weight: bold;
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--spacing-lg);
+  position: relative;
 }
 
 .hero-section p {
-  font-size: 1.1rem;
+  font-size: var(--font-size-xl);
+  opacity: 0.9;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
 }
 
-/* Job Cards */
-.card {
+/* Positions Section */
+.positions-section {
+  padding: var(--spacing-3xl) 0;
+}
+
+.position-card {
+  height: 100%;
+  background-color: var(--gray-100);
   border: none;
-  border-radius: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: var(--radius-lg);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
-.card:hover {
+.position-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-lg);
 }
 
-.card-title {
-  font-size: 1.3rem;
+.position-title {
+  color: var(--primary-blue-dark);
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+}
+
+.position-title i {
   color: var(--primary-blue);
+  margin-right: var(--spacing-sm);
 }
 
-.card-text {
-  font-size: 0.95rem;
-  color: var(--pure-black);
+.position-description {
+  color: var(--gray-700);
+  margin-bottom: var(--spacing-md);
+}
+
+.requirements-list {
+  margin-bottom: var(--spacing-md);
+}
+
+.requirement-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-xs);
+  color: var(--gray-700);
+  font-size: var(--font-size-sm);
+}
+
+.requirement-item i {
+  color: var(--accent-yellow);
+  margin-right: var(--spacing-sm);
 }
 
 /* Culture Section */
-.culture-section h5 {
-  font-size: 1.1rem;
-  font-weight: 600;
+.culture-section {
+  background-color: var(--gray-200);
+  padding: var(--spacing-3xl) 0;
 }
 
-.culture-section p {
-  font-size: 0.95rem;
-  color: var(--dark-gray);
+.culture-card {
+  background-color: var(--off-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  height: 100%;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
-/* Form Styles */
-form label {
+.culture-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.culture-title {
+  color: var(--primary-blue-dark);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+.culture-description {
+  color: var(--gray-700);
+  font-size: var(--font-size-base);
+}
+
+/* Apply Section */
+.apply-section {
+  padding: var(--spacing-3xl) 0;
+}
+
+.apply-section .card {
+  border: none;
+  border-radius: var(--radius-lg);
+  background-color: var(--off-white);
+}
+
+.apply-section .form-label {
+  color: var(--primary-blue-dark);
   font-weight: 500;
 }
 
-form .form-control {
-  border-radius: 0.5rem;
+.apply-section .form-control {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-300);
+  padding: var(--spacing-sm) var(--spacing-md);
 }
 
-form button {
-  font-weight: 600;
-  padding: 0.6rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 2rem;
-  transition: all 0.3s ease;
+.apply-section .form-control:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-form button:hover {
-  background-color: var(--dark-blue);
-  color: #fff;
+/* FAQ Section */
+.faq-section {
+  background-color: var(--gray-200);
+  padding: var(--spacing-3xl) 0;
 }
 
-/* FAQ Accordion */
 .faq-section h2 {
-  color: var(--dark-blue);
+  color: var(--primary-blue-dark);
+}
+
+.accordion {
+  border: none;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.accordion-item {
+  border: none;
+  margin-bottom: var(--spacing-sm);
+}
+
+.accordion-button {
+  background-color: var(--off-white);
+  color: var(--primary-blue-dark);
+  font-weight: 500;
+  padding: var(--spacing-md) var(--spacing-lg);
 }
 
 .accordion-button:not(.collapsed) {
-  background-color: var(--light-gray);
-  color: var(--primary-blue);
-  font-weight: 600;
+  background-color: var(--primary-blue);
+  color: var(--off-white);
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: transparent;
 }
 
 .accordion-body {
-  font-size: 0.95rem;
+  background-color: var(--off-white);
+  color: var(--gray-700);
+  padding: var(--spacing-lg);
 }
 
-/* Contact CTA */
+/* Contact CTA Section */
 .contact-cta {
-  background-color: var(--primary-blue);
-  border-radius: 1rem;
+  background: linear-gradient(135deg, var(--primary-blue-dark), var(--primary-blue));
+  padding: var(--spacing-3xl) 0;
+  margin-top: 0;
 }
 
 .contact-cta h3 {
-  font-size: 1.75rem;
+  font-size: var(--font-size-2xl);
   font-weight: bold;
+  margin-bottom: var(--spacing-md);
 }
 
 .contact-cta p {
-  font-size: 1.05rem;
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.9;
 }
 
 .contact-cta .btn {
   font-weight: 600;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  border-radius: 50px;
-  transition: background 0.3s ease, color 0.3s ease;
+  padding: var(--spacing-sm) var(--spacing-xl);
+  font-size: var(--font-size-base);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
 }
 
 .contact-cta .btn:hover {
-  background-color: white;
+  background-color: var(--off-white);
   color: var(--primary-blue);
+  transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .hero-section h1 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .hero-section p {
+    font-size: var(--font-size-lg);
+  }
+
+  .position-title {
+    font-size: var(--font-size-lg);
+  }
+
+  .culture-card {
+    padding: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .hero-section h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .position-card,
+  .culture-card {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .accordion-button {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
 }

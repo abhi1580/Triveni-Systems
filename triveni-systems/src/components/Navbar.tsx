@@ -1,11 +1,11 @@
 import { NavLink } from 'react-router-dom';
-import { Navbar as BSNavbar, Nav, Button, Container, Row, Col } from 'react-bootstrap';
+import { Navbar as BSNavbar, Nav, Button, Container } from 'react-bootstrap';
 import '../styles/Navbar.css';
 // import logo from '../assets/images/logo.jpg';
 
 const Navbar = () => {
   return (
-    <BSNavbar bg="dark" variant="dark" expand="lg" sticky="top">
+    <BSNavbar expand="lg" sticky="top" className="navbar">
       <Container fluid>
         <BSNavbar.Toggle aria-controls="navbar-content" />
         <BSNavbar.Collapse id="navbar-content" className="w-100">
@@ -15,7 +15,7 @@ const Navbar = () => {
               {/* <BSNavbar.Brand as={NavLink} to="/">
                 <img src={logo} alt="Logo" height="50" />
               </BSNavbar.Brand> */}
-              <BSNavbar.Brand as={NavLink} to="/" className="fw-bold fs-4">
+              <BSNavbar.Brand as={NavLink} to="/" className="navbar-brand">
                 Triveni Systems
               </BSNavbar.Brand>
             </div>
@@ -31,9 +31,9 @@ const Navbar = () => {
 
             
             <div className="d-flex align-items-center">
-              <Button variant="outline-light" as={NavLink} to="/login">
+              <NavLink to="/login" className="btn btn-outline-light">
                 <i className="fas fa-sign-in-alt me-2"></i>Login
-              </Button>
+              </NavLink>
             </div>
           </Container>
         </BSNavbar.Collapse>

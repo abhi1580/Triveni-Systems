@@ -1,4 +1,5 @@
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import '../styles/Services.css';
 
 const services = [
@@ -24,13 +25,61 @@ const services = [
   },
   {
     title: 'Digital Marketing',
-    description: 'Elevate your brand’s digital footprint through data-driven and strategic marketing initiatives.',
+    description: "Elevate your brand's digital footprint through data-driven and strategic marketing initiatives.",
     icon: 'fas fa-bullhorn',
   },
   {
     title: 'Modernization of Legacy Systems',
     description: 'Revitalize and upgrade legacy websites and applications to meet contemporary standards and performance.',
     icon: 'fas fa-sync-alt',
+  }
+];
+
+const technologyCategories = [
+  {
+    category: "Frontend Development",
+    technologies: [
+      { name: "React.js", icon: "fab fa-react" },
+      { name: "TypeScript", icon: "fab fa-js" },
+      { name: "JavaScript", icon: "fab fa-js" },
+      { name: "HTML5", icon: "fab fa-html5" },
+      { name: "CSS3", icon: "fab fa-css3-alt" },
+      { name: "Bootstrap", icon: "fab fa-bootstrap" }
+    ]
+  },
+  {
+    category: "Backend Development",
+    technologies: [
+      { name: "Node.js", icon: "fab fa-node-js" },
+      { name: "Python", icon: "fab fa-python" },
+      { name: "GraphQL", icon: "fas fa-project-diagram" },
+      { name: "REST APIs", icon: "fas fa-plug" }
+    ]
+  },
+  {
+    category: "Mobile Development",
+    technologies: [
+      { name: "Flutter", icon: "fas fa-mobile-alt" },
+      { name: "Swift", icon: "fab fa-swift" },
+      { name: "Kotlin", icon: "fab fa-android" }
+    ]
+  },
+  {
+    category: "Database & Cloud",
+    technologies: [
+      { name: "MongoDB", icon: "fas fa-database" },
+      { name: "MySQL", icon: "fas fa-database" },
+      { name: "AWS", icon: "fab fa-aws" },
+      { name: "Azure", icon: "fab fa-microsoft" }
+    ]
+  },
+  {
+    category: "DevOps & Tools",
+    technologies: [
+      { name: "Docker", icon: "fab fa-docker" },
+      { name: "Kubernetes", icon: "fas fa-cube" },
+      { name: "Git", icon: "fab fa-git-alt" }
+    ]
   }
 ];
 
@@ -45,68 +94,83 @@ const testimonials = [
   },
 ];
 
-const technologies = [
-  "React.js", "Node.js", "Python", "Flutter", "Swift", "Kotlin", "Bootstrap", "MongoDB", "MySQL", "AWS" ,"Azure", "Docker", "Kubernetes", "Git", "GraphQL", "REST APIs", "HTML5", "CSS3", "JavaScript", "TypeScript"
-];
-
 const Services = () => {
   return (
     <div className="services-page">
       {/* Hero Section */}
-      <section className="hero-section text-center text-light py-5 bg-dark">
+      <section className="hero-section text-center text-light py-5">
+        <div className="hero-overlay"></div>
         <Container>
-          <h1>Our Services</h1>
-          <p className="lead">Comprehensive IT solutions tailored to your business needs.</p>
-          <Button variant="primary" className="mt-3">Get a Free Consultation</Button>
+          <h1 className="display-4 fw-bold">Our Services</h1>
+          <p className="lead mb-4">Comprehensive IT solutions tailored to your business needs.</p>
+          <Link to="/contact" className="btn btn-primary btn-lg">
+            <i className="fas fa-headset me-2"></i>Get a Free Consultation
+          </Link>
         </Container>
       </section>
 
       {/* Services Cards */}
-      <Container className="py-5">
-        <Row>
-          {services.map((service, index) => (
-            <Col md={6} lg={4} key={index} className="mb-4">
-              <Card className="h-100 shadow">
-                <Card.Body>
-                  <Card.Title>
-                    <i className={`${service.icon} me-2`}></i>
-                    {service.title}
-                  </Card.Title>
-                  <Card.Text>{service.description}</Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </Container>
-
-
-      {/* Technologies Section */}
-      <section className="tech-stack py-5">
+      <section className="services-section py-5">
         <Container>
-          <h2 className="text-center mb-4">Technologies We Use</h2>
-          <Row className="justify-content-center">
-            {technologies.map((tech, idx) => (
-              <Col xs={6} md={3} className="mb-3 text-center" key={idx}>
-                <span className="badge bg-secondary p-2 fs-6">{tech}</span>
+          <h2 className="text-center mb-5">What We Offer</h2>
+          <Row>
+            {services.map((service, index) => (
+              <Col md={6} lg={4} key={index} className="mb-4">
+                <Card className="h-100 shadow-sm service-card">
+                  <Card.Body>
+                    <Card.Title className="service-title">
+                      <i className={`${service.icon} me-2`}></i>
+                      {service.title}
+                    </Card.Title>
+                    <Card.Text className="service-description">{service.description}</Card.Text>
+                    <Link to="/contact" className="btn btn-link">Learn More</Link>
+                  </Card.Body>
+                </Card>
               </Col>
             ))}
           </Row>
         </Container>
       </section>
 
-      {/* Testimonials */}
-      <section className="testimonials bg-light py-5">
+      {/* Technologies Section */}
+      <section className="tech-stack py-5 bg-light">
         <Container>
-          <h2 className="text-center mb-4">What Our Clients Say</h2>
+          <h2 className="text-center mb-5">Technologies We Use</h2>
+          <div className="tech-categories">
+            {technologyCategories.map((category, categoryIndex) => (
+              <div key={categoryIndex} className="tech-category mb-5">
+                <h3 className="category-title mb-4">{category.category}</h3>
+                <Row className="justify-content-center">
+                  {category.technologies.map((tech, techIndex) => (
+                    <Col xs={6} sm={4} md={3} lg={2} key={techIndex} className="mb-4">
+                      <div className="tech-item">
+                        <i className={`${tech.icon} tech-icon`}></i>
+                        <span className="tech-name">{tech.name}</span>
+                      </div>
+                    </Col>
+                  ))}
+                </Row>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Testimonials */}
+      <section className="testimonials py-5">
+        <Container>
+          <h2 className="text-center mb-5">What Our Clients Say</h2>
           <Row>
             {testimonials.map((testi, idx) => (
-              <Col md={6} key={idx}>
-                <Card className="mb-3 shadow-sm">
+              <Col md={6} key={idx} className="mb-4">
+                <Card className="h-100 shadow-sm testimonial-card">
                   <Card.Body>
                     <blockquote className="blockquote mb-0">
-                      <p>"{testi.feedback}"</p>
-                      <footer className="blockquote-footer mt-2">{testi.name}</footer>
+                      <i className="fas fa-quote-left text-primary mb-3"></i>
+                      <p className="testimonial-text">"{testi.feedback}"</p>
+                      <footer className="blockquote-footer mt-3">
+                        <cite title={testi.name}>{testi.name}</cite>
+                      </footer>
                     </blockquote>
                   </Card.Body>
                 </Card>
@@ -117,11 +181,13 @@ const Services = () => {
       </section>
 
       {/* Contact Prompt */}
-      <section className="contact-cta text-center text-white py-5 bg-primary">
+      <section className="contact-cta text-center text-white py-5 mb-0">
         <Container>
-          <h3>Ready to Elevate Your Digital Presence?</h3>
-          <p className="mb-3">Let’s discuss how we can bring your vision to life.</p>
-          <Button variant="light" size="lg">Contact Us</Button>
+          <h3 className="mb-4">Ready to Elevate Your Digital Presence?</h3>
+          <p className="lead mb-4">Let's discuss how we can bring your vision to life.</p>
+          <Link to="/contact" className="btn btn-light btn-lg">
+            <i className="fas fa-paper-plane me-2"></i>Contact Us
+          </Link>
         </Container>
       </section>
     </div>
