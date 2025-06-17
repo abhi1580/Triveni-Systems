@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Container, Form, Button, Alert } from 'react-bootstrap';
+import { Container, Form, Button, Alert, Card } from 'react-bootstrap';
 import { AuthContext } from '../context/AuthContext';
 import '../styles/Login.css';
 
@@ -28,35 +28,75 @@ const Login = () => {
   };
 
   return (
-    <Container className="login-page py-5">
-      <h2 className="text-center mb-4">
-        <i className="fas fa-lock me-2"></i>Login
-      </h2>
-      <Form className="mx-auto" style={{ maxWidth: '400px' }} onSubmit={handleSubmit}>
-        {error && <Alert variant="danger">{error}</Alert>}
-        <Form.Group className="mb-3" controlId="formEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Enter email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Form.Group>
-        <Button variant="primary" type="submit" className="w-100">
-          <i className="fas fa-sign-in-alt me-2"></i>Login
-        </Button>
-      </Form>
-    </Container>
+    <div className="login-page">
+      <Container>
+        <div className="login-container">
+          <Card className="login-card">
+            <Card.Body>
+              <div className="text-center mb-4">
+                <h2 className="login-title">
+                  <i className="fas fa-lock me-2"></i>Welcome Back
+                </h2>
+                <p className="login-subtitle">Please sign in to continue</p>
+              </div>
+              
+              {error && (
+                <Alert variant="danger" className="login-alert">
+                  <i className="fas fa-exclamation-circle me-2"></i>
+                  {error}
+                </Alert>
+              )}
+
+              <Form onSubmit={handleSubmit}>
+                <Form.Group className="mb-4" controlId="formEmail">
+                  <Form.Label>Email address</Form.Label>
+                  <div className="input-group">
+                    <span className="input-group-text">
+                      <i className="fas fa-envelope"></i>
+                    </span>
+                    <Form.Control
+                      type="email"
+                      placeholder="Enter your email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="login-input"
+                    />
+                  </div>
+                </Form.Group>
+
+                <Form.Group className="mb-4" controlId="formPassword">
+                  <Form.Label>Password</Form.Label>
+                  <div className="input-group">
+                    <span className="input-group-text">
+                      <i className="fas fa-key"></i>
+                    </span>
+                    <Form.Control
+                      type="password"
+                      placeholder="Enter your password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      className="login-input"
+                    />
+                  </div>
+                </Form.Group>
+
+                <div className="d-grid gap-2">
+                  <Button variant="primary" type="submit" className="login-button">
+                    <i className="fas fa-sign-in-alt me-2"></i>Sign In
+                  </Button>
+                </div>
+              </Form>
+
+              <div className="text-center mt-4">
+                <p className="login-footer">
+                  Don't have an account? Contact administrator
+                </p>
+              </div>
+            </Card.Body>
+          </Card>
+        </div>
+      </Container>
+    </div>
   );
 };
 

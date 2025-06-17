@@ -50,14 +50,14 @@ const Footer = () => {
         </Row>
       </Container>
       <a 
-        href="https://wa.me/919146334963" 
+        href="https://wa.me/918087992028?text=Hi%20Triveni%20Systems%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." 
         className="whatsapp-float" 
         target="_blank" 
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
       >
         <i className="fab fa-whatsapp"></i>
-        <span className="whatsapp-tooltip">Get Quick Question</span>
+        <span className="whatsapp-tooltip">Get Quick Quote</span>
       </a>
     </footer>
   );

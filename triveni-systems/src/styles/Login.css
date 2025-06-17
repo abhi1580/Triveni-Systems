@@ -1,11 +1,115 @@
 .login-page {
-  background-color: #f8f9fa;
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  padding: 4rem 0;
+  margin: 0;
 }
 
-.login-page h2 {
-  font-weight: bold;
+.login-container {
+  max-width: 450px;
+  margin: 2rem auto;
+  width: 100%;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+  margin: 1rem 0;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+}
+
+.login-title {
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.login-subtitle {
+  color: var(--gray-600);
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.login-alert {
+  border-radius: 8px;
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+}
+
+.form-label {
+  color: var(--gray-700);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.input-group-text {
+  background-color: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  color: var(--gray-600);
+}
+
+.login-input {
+  border: 1px solid var(--gray-200);
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.login-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+.login-button {
+  background: var(--primary-color);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.login-footer {
+  color: var(--gray-600);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .login-page {
+    padding: 2rem 0;
+  }
+
+  .login-container {
+    padding: 0 1rem;
+    margin: 1rem auto;
+  }
+
+  .login-card {
+    margin: 0.5rem 0;
+  }
+
+  .login-title {
+    font-size: 1.75rem;
+  }
+
+  .login-card {
+    border-radius: 10px;
+  }
 }
