@@ -33,9 +33,9 @@
 
 /* Hero Section */
 .contact-hero {
-  background: linear-gradient(135deg, var(--primary-blue-dark), var(--primary-blue));
-  padding: var(--spacing-3xl) 0;
+  background: var(--primary-blue-dark);
   color: var(--gray-100);
+  padding: var(--spacing-3xl) 0;
   height: 70vh;
   display: flex;
   flex-direction: column;
