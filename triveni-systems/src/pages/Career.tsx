@@ -128,7 +128,7 @@ const Career = () => {
       </section>
 
       {/* Culture Section */}
-      <section className="culture-section py-5 bg-light">
+      <section className="culture-section py-5 bg-gray">
         <Container>
           <h2 className="text-center mb-5">Life at Triveni Systems</h2>
           <Row>
@@ -208,7 +208,7 @@ const Career = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="faq-section py-5 bg-light">
+      <section className="faq-section py-5 bg-gray">
         <Container>
           <h2 className="text-center mb-5">Frequently Asked Questions</h2>
           <Row className="justify-content-center">

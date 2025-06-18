@@ -28,7 +28,7 @@ const Login = () => {
   };
 
   return (
-    <div className="login-page">
+    <div className="login-page bg-gray">
       <Container>
         <div className="login-container">
           <Card className="login-card">

@@ -110,7 +110,7 @@ const Services = () => {
       </section>
 
       {/* Services Cards */}
-      <section className="services-section py-5">
+      <section className="services-section py-5 bg-light">
         <Container>
           <h2 className="text-center mb-5">What We Offer</h2>
           <Row>
@@ -132,8 +132,174 @@ const Services = () => {
         </Container>
       </section>
 
+       {/* Pricing Section: Plans */}
+       <section className="pricing-section py-5 bg-light">
+        <Container>
+          <h2 className="text-center mb-5">Pricing Plans</h2>
+          <Row className="justify-content-center">
+            <Col md={4} className="mb-4">
+              <Card className="h-100 shadow-sm pricing-card text-center">
+                <Card.Body>
+                  <Card.Title className="mb-3">Basic</Card.Title>
+                  <h3 className="pricing-price mb-3">₹9,999 <small className="text-muted">/project</small></h3>
+                  <ul className="list-unstyled mb-4">
+                    <li>✔ Single Page Website</li>
+                    <li>✔ Responsive Design</li>
+                    <li>✔ Basic SEO</li>
+                    <li>✔ Email Support</li>
+                  </ul>
+                  <Link to="/contact" className="btn btn-outline-primary">Get Started</Link>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={4} className="mb-4">
+              <Card className="h-100 shadow-sm pricing-card text-center border-primary">
+                <Card.Body>
+                  <Card.Title className="mb-3">Standard</Card.Title>
+                  <h3 className="pricing-price mb-3">₹24,999 <small className="text-muted">/project</small></h3>
+                  <ul className="list-unstyled mb-4">
+                    <li>✔ Multi-Page Website</li>
+                    <li>✔ Responsive Design</li>
+                    <li>✔ Advanced Features</li>
+                    <li>✔ Enhanced SEO</li>
+                    <li>✔ Email Support</li>
+                    <li>✔ 1 Month Free Support</li>
+                  </ul>
+                  <Link to="/contact" className="btn btn-primary">Choose Standard</Link>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={4} className="mb-4">
+              <Card className="h-100 shadow-sm pricing-card text-center">
+                <Card.Body>
+                  <Card.Title className="mb-3">Premium</Card.Title>
+                  <h3 className="pricing-price mb-3">₹49,999 <small className="text-muted">/project</small></h3>
+                  <ul className="list-unstyled mb-4">
+                  <li>✔ Multi-Page Website</li>
+                  <li>✔ Responsive Design</li>
+                  <li>✔ Advanced Features</li>
+                    <li>✔ Enhanced SEO</li>
+                    <li>✔ Email Support</li>
+                    <li>✔ Custom Solutions</li>
+                    <li>✔ Priority Support</li>
+                    <li>✔ Marketing Integration</li>
+                    <li>✔ 3 Months Free Support</li>
+                  </ul>
+                  <Link to="/contact" className="btn btn-outline-primary">Go Premium</Link>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* Pricing Section: By Service */}
+      <section className="pricing-section py-5 bg-light">
+        <Container>
+          <h2 className="text-center mb-5">Pricing by Service</h2>
+          <Row className="justify-content-center">
+            {/* Web Development */}
+            <Col md={4} className="mb-4">
+              <Card className="h-100 shadow-sm pricing-card text-center">
+                <Card.Body>
+                  <Card.Title className="mb-3"><i className="fas fa-laptop-code me-2"></i>Web Development</Card.Title>
+                  <h3 className="pricing-price mb-3">₹9,999+ <small className="text-muted">/project</small></h3>
+                  <ul className="list-unstyled mb-4">
+                    <li>✔ Single/Multi Page Sites</li>
+                    <li>✔ Responsive Design</li>
+                    <li>✔ SEO Optimization</li>
+                    <li>✔ CMS Integration</li>
+                  </ul>
+                  <Link to="/contact" className="btn btn-outline-primary">Get Quote</Link>
+                </Card.Body>
+              </Card>
+            </Col>
+            {/* Android App Development */}
+            <Col md={4} className="mb-4">
+              <Card className="h-100 shadow-sm pricing-card text-center">
+                <Card.Body>
+                  <Card.Title className="mb-3"><i className="fab fa-android me-2"></i>Android App Development</Card.Title>
+                  <h3 className="pricing-price mb-3">₹19,999+ <small className="text-muted">/app</small></h3>
+                  <ul className="list-unstyled mb-4">
+                    <li>✔ Native/Hybrid Apps</li>
+                    <li>✔ Play Store Deployment</li>
+                    <li>✔ UI/UX Design</li>
+                    <li>✔ API Integration</li>
+                  </ul>
+                  <Link to="/contact" className="btn btn-outline-primary">Get Quote</Link>
+                </Card.Body>
+              </Card>
+            </Col>
+            {/* iOS App Development */}
+            <Col md={4} className="mb-4">
+              <Card className="h-100 shadow-sm pricing-card text-center">
+                <Card.Body>
+                  <Card.Title className="mb-3"><i className="fab fa-apple me-2"></i>iOS App Development</Card.Title>
+                  <h3 className="pricing-price mb-3">₹24,999+ <small className="text-muted">/app</small></h3>
+                  <ul className="list-unstyled mb-4">
+                    <li>✔ Native/Hybrid Apps</li>
+                    <li>✔ App Store Deployment</li>
+                    <li>✔ UI/UX Design</li>
+                    <li>✔ API Integration</li>
+                  </ul>
+                  <Link to="/contact" className="btn btn-outline-primary">Get Quote</Link>
+                </Card.Body>
+              </Card>
+            </Col>
+            {/* Desktop Applications */}
+            <Col md={4} className="mb-4">
+              <Card className="h-100 shadow-sm pricing-card text-center">
+                <Card.Body>
+                  <Card.Title className="mb-3"><i className="fas fa-desktop me-2"></i>Desktop Applications</Card.Title>
+                  <h3 className="pricing-price mb-3">₹29,999+ <small className="text-muted">/project</small></h3>
+                  <ul className="list-unstyled mb-4">
+                    <li>✔ Windows/Mac/Linux</li>
+                    <li>✔ Custom Features</li>
+                    <li>✔ Integration & Support</li>
+                    <li>✔ Modern UI</li>
+                  </ul>
+                  <Link to="/contact" className="btn btn-outline-primary">Get Quote</Link>
+                </Card.Body>
+              </Card>
+            </Col>
+            {/* Digital Marketing */}
+            <Col md={4} className="mb-4">
+              <Card className="h-100 shadow-sm pricing-card text-center">
+                <Card.Body>
+                  <Card.Title className="mb-3"><i className="fas fa-bullhorn me-2"></i>Digital Marketing</Card.Title>
+                  <h3 className="pricing-price mb-3">₹7,999+ <small className="text-muted">/month</small></h3>
+                  <ul className="list-unstyled mb-4">
+                    <li>✔ SEO & SEM</li>
+                    <li>✔ Social Media Management</li>
+                    <li>✔ Content Marketing</li>
+                    <li>✔ Analytics & Reporting</li>
+                  </ul>
+                  <Link to="/contact" className="btn btn-outline-primary">Get Quote</Link>
+                </Card.Body>
+              </Card>
+            </Col>
+            {/* Modernization of Legacy Systems */}
+            <Col md={4} className="mb-4">
+              <Card className="h-100 shadow-sm pricing-card text-center">
+                <Card.Body>
+                  <Card.Title className="mb-3"><i className="fas fa-sync-alt me-2"></i>Legacy System Modernization</Card.Title>
+                  <h3 className="pricing-price mb-3">₹14,999+ <small className="text-muted">/project</small></h3>
+                  <ul className="list-unstyled mb-4">
+                    <li>✔ Code Refactoring</li>
+                    <li>✔ UI/UX Upgrade</li>
+                    <li>✔ Performance Boost</li>
+                    <li>✔ Cloud Migration</li>
+                  </ul>
+                  <Link to="/contact" className="btn btn-outline-primary">Get Quote</Link>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
       {/* Technologies Section */}
-      <section className="tech-stack py-5 bg-light">
+      <section className="tech-stack py-5 ">
         <Container>
           <h2 className="text-center mb-5">Technologies We Use</h2>
           <div className="tech-categories">
@@ -155,6 +321,8 @@ const Services = () => {
           </div>
         </Container>
       </section>
+
+     
 
       {/* Testimonials */}
       <section className="testimonials py-5">

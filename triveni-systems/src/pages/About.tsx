@@ -120,7 +120,7 @@ const About = () => {
       </section>
 
       {/* Core Values */}
-      <section className="values-section py-5">
+      <section className="values-section py-5 bg-gray">
         <Container>
           <h2 className="text-center mb-5">Our Core Values</h2>
           <Row>
