@@ -68,7 +68,7 @@
 }
 
 .footer-divider {
-  border-color: whitesmoke;
+  border-color: var(--gray);
   margin: var(--spacing-xl) 0;
   opacity: 0.2;
 }
@@ -229,4 +229,93 @@
   .whatsapp-tooltip {
     display: none;
   }
+}
+
+.modern-footer {
+  background: var(--gray-200);
+  color: var(--primary-blue-dark);
+  padding: 2.5rem 0 1.5rem 0;
+  border-radius: 1.5rem 1.5rem 0 0;
+  box-shadow: 0 -2px 16px rgba(26,35,126,0.08);
+  margin-top: 3rem;
+  
+}
+.modern-footer .footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+.modern-footer .footer-section {
+  flex: 1 1 200px;
+  margin-bottom: 1.5rem;
+}
+.modern-footer .footer-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary-blue);
+}
+.modern-footer .footer-link {
+  color: var(--primary-blue-dark);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s;
+}
+.modern-footer .footer-link:hover {
+  color: var(--accent-yellow);
+}
+.modern-footer .footer-socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.modern-footer .footer-social-icon {
+  color: var(--primary-blue-dark);
+  background: var(--white);
+  font-size: 2rem;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(26,35,126,0.08);
+  transition: color 0.2s, background 0.2s, transform 0.2s;
+}
+.modern-footer .footer-social-icon:hover {
+  color: var(--accent-yellow);
+  background: var(--gray-200);
+  transform: translateY(-3px) scale(1.08);
+}
+.modern-footer .footer-bottom {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--gray-500);
+  font-size: 0.95rem;
+  padding: 0;
+}
+.modern-footer .footer-text {
+  color: var(--gray-700);
+}
+.modern-footer .newsletter-input {
+  background-color: var(--white);
+  color: var(--primary-blue-dark);
+  border: 1px solid var(--gray-300);
+}
+.modern-footer .newsletter-input:focus {
+  border-color: var(--primary-blue);
+}
+.modern-footer .newsletter-button {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+.modern-footer .newsletter-button:hover {
+  background-color: var(--accent-yellow);
+  color: var(--primary-blue-dark);
 }

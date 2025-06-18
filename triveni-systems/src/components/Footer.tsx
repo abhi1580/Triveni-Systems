@@ -3,7 +3,7 @@ import '../styles/Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer modern-footer">
       <Container fluid>
         <Row className="py-8">
           <Col md={3} className="mb-6">
@@ -34,11 +34,11 @@ const Footer = () => {
           </Col>
           <Col md={3}>
             <h5 className="footer-title">Follow Us</h5>
-            <div className="social-links">
-              <a href="#" className="footer-social" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
-              <a href="#" className="footer-social" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
-              <a href="#" className="footer-social" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
-              <a href="#" className="footer-social" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+            <div className="footer-socials">
+              <a href="#" className="footer-social-icon" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
+              <a href="#" className="footer-social-icon" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
+              <a href="#" className="footer-social-icon" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
+              <a href="#" className="footer-social-icon" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
             </div>
           </Col>
         </Row>
