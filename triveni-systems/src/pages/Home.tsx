@@ -8,7 +8,7 @@ const Home = () => {
     <div className="home-page">
       {/* Hero Section */}
       <section className="hero-section text-center text-light py-5">
-        <div className="hero-overlay"></div>
+       
         <Container>
           <h1 className="display-4 fw-bold">Welcome to Triveni Systems</h1>
           <p className="lead mb-4">

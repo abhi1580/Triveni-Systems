@@ -61,7 +61,7 @@ const About = () => {
     <div className="about-page">
       {/* Hero Section */}
       <section className="hero-section text-center text-light py-5">
-        <div className="hero-overlay"></div>
+        
         <Container>
           <h1 className="display-4 fw-bold">About Triveni Systems</h1>
           <p className="lead mb-4">Innovating the future of IT solutions with passion and expertise.</p>

@@ -27,6 +27,7 @@ const Contact = () => {
     <div className="contact-page">
       {/* Hero Section */}
       <section className="contact-hero text-center text-light py-5">
+      
         <Container>
           <h1 className="display-4 fw-bold">Contact Us</h1>
           <p className="lead mb-4">Get in touch with our team for any inquiries or support.</p>
@@ -174,7 +175,7 @@ const Contact = () => {
       </section>
 
       {/* Contact CTA */}
-      <section className="contact-cta text-center text-white">
+      <section className="contact-cta text-center text-white py-5 mb-0">
         <Container>
           <h3 className="mb-4">Ready to Start Your Project?</h3>
           <p className="lead mb-4">Let's discuss how we can help transform your business with our IT solutions.</p>
@@ -184,6 +185,7 @@ const Contact = () => {
         </Container>
       </section>
     </div>
+    
   );
 };
 

@@ -1,30 +1,4 @@
-/* Contact.css */
 
-/* Root variables (assumed to be defined globally, matching Services.css) */
-:root {
-  --primary-blue: #007bff;
-  --primary-blue-dark: #0056b3;
-  --accent-yellow: #ffc107;
-  --gray-100: #f8f9fa;
-  --gray-200: #e9ecef;
-  --gray-700: #495057;
-  --off-white: #ffffff;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  --spacing-3xl: 4rem;
-  --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.25rem;
-  --font-size-xl: 1.5rem;
-  --font-size-2xl: 2rem;
-  --font-size-3xl: 3rem;
-  --font-size-4xl: 4rem;
-  --radius-lg: 0.5rem;
-  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.1);
-  --transition-base: all 0.3s ease;
-}
 
 /* Contact Page */
 .contact-page {
@@ -33,7 +7,7 @@
 
 /* Hero Section */
 .contact-hero {
-  background: var(--primary-blue-dark);
+  background: linear-gradient(135deg, var(--primary-blue-dark), var(--primary-blue));
   color: var(--gray-100);
   padding: var(--spacing-3xl) 0;
   height: 70vh;

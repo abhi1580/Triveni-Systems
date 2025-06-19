@@ -99,7 +99,7 @@ const Services = () => {
     <div className="services-page">
       {/* Hero Section */}
       <section className="hero-section text-center text-light py-5">
-        <div className="hero-overlay"></div>
+       
         <Container>
           <h1 className="display-4 fw-bold">Our Services</h1>
           <p className="lead mb-4">Comprehensive IT solutions tailored to your business needs.</p>
