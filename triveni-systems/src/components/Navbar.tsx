@@ -1,55 +1,97 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
-import '../styles/Navbar.css';
+import styles from './Navbar.module.css';
+
+const navLinks = [
+  { to: '/', label: 'Home', end: true },
+  { to: '/services', label: 'Services' },
+  { to: '/career', label: 'Career' },
+  { to: '/about', label: 'About' },
+  { to: '/contact', label: 'Contact' },
+];
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const handleToggle = () => setMenuOpen((open) => !open);
+  const handleLinkClick = () => setMenuOpen(false);
+
+  // Split navLinks for logo placement
+  const beforeLogo = navLinks.slice(0, 3);
+  const afterLogo = navLinks.slice(3);
+
   return (
-    <nav className="custom-navbar">
-      <div className="container-fluid">
-        <NavLink className="navbar-brand" to="/">
-          <img src={logo} height="60" alt="logo" />
-        </NavLink>
+    <header className={styles.navbarWrapper}>
+      <nav className={styles.navbar}>
         <button
-          className="navbar-toggler"
-          type="button"
-          aria-label="Toggle navigation"
-          onClick={() => setMenuOpen(!menuOpen)}
+          className={styles.menuButton}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          aria-controls="navbar-menu"
+          onClick={handleToggle}
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className={styles.menuIcon}>
+            <span className={menuOpen ? styles.barOpen : styles.bar}></span>
+            <span className={menuOpen ? styles.barOpen : styles.bar}></span>
+            <span className={menuOpen ? styles.barOpen : styles.bar}></span>
+          </span>
         </button>
-        <div className={`navbar-collapse${menuOpen ? ' show' : ''}`}>
-          <div className="nav_left">
-            <nav>
-              <div className="nav nav-tabs" id="nav-tab" role="tablist">
-                <NavLink to="/" className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')} end>Home</NavLink>
-                <NavLink to="/services" className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}>Services</NavLink>
-                <NavLink to="/career" className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}>Career</NavLink>
-                <NavLink to="/about" className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}>About</NavLink>
-                <NavLink to="/contact" className={({ isActive }) => 'nav-link' + (isActive ? ' active' : '')}>Contact</NavLink>
-              </div>
-            </nav>
-            <div className="position-relative d-inline-block me-lg-4">
-              <input
-                className="search_input ms-5 mb-3 mb-lg-0 ms-lg-0 pe-5 ps-3"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <span className="position-absolute search_icon">
-                <i className="fas fa-search"></i>
-              </span>
-            </div>
-            <NavLink to="/login" className="btn btn-primary navbar-login-btn ms-3">
-              <i className="fas fa-sign-in-alt me-2"></i>Login
-            </NavLink>
-          </div>
+        <div
+          className={menuOpen ? `${styles.menu} ${styles.open}` : styles.menu}
+          id="navbar-menu"
+        >
+          <ul className={styles.navLinks}>
+            {beforeLogo.map((link) => (
+              <li key={link.to}>
+                <NavLink
+                  to={link.to}
+                  end={link.end}
+                  className={({ isActive }) =>
+                    isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+                  }
+                  onClick={handleLinkClick}
+                >
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
+            {/* Logo in the middle */}
+            <li className={styles.logoNavItem} tabIndex={-1} aria-hidden="true">
+              <NavLink to="/" className={styles.logo} tabIndex={0} onClick={handleLinkClick} aria-label="Home">
+                <img src={logo} alt="Triveni Systems Logo" height={28} />
+              </NavLink>
+            </li>
+            {afterLogo.map((link) => (
+              <li key={link.to}>
+                <NavLink
+                  to={link.to}
+                  end={link.end}
+                  className={({ isActive }) =>
+                    isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+                  }
+                  onClick={handleLinkClick}
+                >
+                  {link.label}
+                </NavLink>
+              </li>
+            ))}
+            <li>
+              <NavLink
+                to="/login"
+                className={({ isActive }) =>
+                  isActive ? `${styles.loginBtn} ${styles.active}` : styles.loginBtn
+                }
+                onClick={handleLinkClick}
+              >
+                Login
+              </NavLink>
+            </li>
+          </ul>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 
-export default Navbar;
+export default Navbar; 
