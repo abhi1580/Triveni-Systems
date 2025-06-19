@@ -238,6 +238,96 @@ h2 {
   font-size: var(--font-size-lg);
 }
 
+/* Clients Section */
+.clients-section {
+  background-color: var(--gray-100);
+  padding: var(--spacing-3xl) 0;
+}
+
+.clients-section .card {
+  height: 100%;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s ease;
+  background-color: var(--off-white);
+}
+
+.clients-section .card-title {
+  color: var(--primary-blue);
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-md);
+}
+
+.clients-section .card-text {
+  color: var(--gray-700);
+  font-size: var(--font-size-lg);
+}
+
+/* Products Section */
+.products-section {
+  background-color: var(--gray-200);
+  padding: var(--spacing-3xl) 0;
+}
+
+.products-section .card {
+  height: 100%;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s ease;
+  background-color: var(--off-white);
+}
+
+.products-section .card-title {
+  color: var(--primary-blue);
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-md);
+}
+
+.products-section .card-text {
+  color: var(--gray-700);
+  font-size: var(--font-size-lg);
+}
+
+/* Investors Section */
+.investors-section {
+  background-color: var(--gray-100);
+  padding: var(--spacing-3xl) 0;
+}
+
+.investors-section .card {
+  height: 100%;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s ease;
+  background-color: var(--off-white);
+}
+
+.investors-section .card-title {
+  color: var(--primary-blue);
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-md);
+}
+
+.investors-section .card-text {
+  color: var(--gray-700);
+  font-size: var(--font-size-lg);
+}
+
 /* Utility Animations (Optional) */
 /* Removed unused classes: .fade-in, @keyframes fadeIn (if not used in Home.tsx) */
 

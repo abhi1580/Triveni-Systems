@@ -135,6 +135,114 @@ const Home = () => {
           </Row>
         </Container>
       </section>
+
+      {/* Clients Section */}
+      <section className="clients-section py-5">
+        <Container>
+          <h2 className="text-center mb-5">Our Clients</h2>
+          <Row className="justify-content-center">
+            <Col md={3} sm={6} className="mb-4 text-center">
+              <Card className="h-100 shadow-sm">
+                <Card.Body>
+                  <Card.Title><i className="fas fa-building me-2"></i>ABC Corporation</Card.Title>
+                  <Card.Text>Leading manufacturing company trusting us for their digital transformation.</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={3} sm={6} className="mb-4 text-center">
+              <Card className="h-100 shadow-sm">
+                <Card.Body>
+                  <Card.Title><i className="fas fa-hospital me-2"></i>HealthPlus</Card.Title>
+                  <Card.Text>Healthcare provider leveraging our IT solutions for better patient care.</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={3} sm={6} className="mb-4 text-center">
+              <Card className="h-100 shadow-sm">
+                <Card.Body>
+                  <Card.Title><i className="fas fa-graduation-cap me-2"></i>EduSmart</Card.Title>
+                  <Card.Text>EdTech innovator scaling with our robust platforms and support.</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={3} sm={6} className="mb-4 text-center">
+              <Card className="h-100 shadow-sm">
+                <Card.Body>
+                  <Card.Title><i className="fas fa-shopping-cart me-2"></i>ShopEase</Card.Title>
+                  <Card.Text>Retail leader enhancing customer experience through our e-commerce solutions.</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* Products Section */}
+      <section className="products-section py-5 bg-light">
+        <Container>
+          <h2 className="text-center mb-5">Our Products</h2>
+          <Row className="justify-content-center">
+            <Col md={4} sm={6} className="mb-4 text-center">
+              <Card className="h-100 shadow-sm">
+                <Card.Body>
+                  <Card.Title><i className="fas fa-cloud me-2"></i>CloudSuite</Card.Title>
+                  <Card.Text>Comprehensive cloud management platform for businesses of all sizes.</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={4} sm={6} className="mb-4 text-center">
+              <Card className="h-100 shadow-sm">
+                <Card.Body>
+                  <Card.Title><i className="fas fa-shield-alt me-2"></i>SecureIT</Card.Title>
+                  <Card.Text>Advanced cybersecurity suite to protect your digital assets 24/7.</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={4} sm={6} className="mb-4 text-center">
+              <Card className="h-100 shadow-sm">
+                <Card.Body>
+                  <Card.Title><i className="fas fa-chart-line me-2"></i>InsightPro</Card.Title>
+                  <Card.Text>Powerful analytics tool to drive data-driven decisions and growth.</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      {/* Investors Corner Section */}
+      <section className="investors-section py-5">
+        <Container>
+          <h2 className="text-center mb-5">Investors Corner</h2>
+          <Row className="justify-content-center">
+            <Col md={4} sm={6} className="mb-4 text-center">
+              <Card className="h-100 shadow-sm">
+                <Card.Body>
+                  <Card.Title><i className="fas fa-newspaper me-2"></i>Latest News</Card.Title>
+                  <Card.Text>Stay updated with our latest financial news, press releases, and announcements for investors.</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={4} sm={6} className="mb-4 text-center">
+              <Card className="h-100 shadow-sm">
+                <Card.Body>
+                  <Card.Title><i className="fas fa-file-alt me-2"></i>Reports & Filings</Card.Title>
+                  <Card.Text>Access our annual reports, financial statements, and regulatory filings in one place.</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={4} sm={6} className="mb-4 text-center">
+              <Card className="h-100 shadow-sm">
+                <Card.Body>
+                  <Card.Title><i className="fas fa-envelope-open-text me-2"></i>Investor Contact</Card.Title>
+                  <Card.Text>Have questions? Reach out to our investor relations team for more information.</Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
       {/* Fixed Contact Button */}
       
     </div>
