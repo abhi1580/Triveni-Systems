@@ -94,6 +94,147 @@ const Career = () => {
         </Container>
       </section>
 
+      {/* Job & Internship Criteria by Service */}
+      <section className="criteria-section py-5 bg-light">
+        <Container>
+          <h2 className="text-center mb-5">Job & Internship Criteria</h2>
+          <Row>
+            {/* Web Development */}
+            <Col md={6} lg={4} className="mb-4">
+              <Card className="h-100 shadow-sm">
+                <Card.Body>
+                  <Card.Title><i className="fas fa-laptop-code me-2"></i>Web Development</Card.Title>
+                  <Card.Text>
+                    <strong>Job Criteria:</strong>
+                    <ul>
+                      <li>Proficiency in HTML, CSS, JavaScript, and modern frameworks (React, Angular, etc.).</li>
+                      <li>Experience with responsive and accessible web design.</li>
+                      <li>Portfolio of completed web projects.</li>
+                    </ul>
+                    <strong>Internship Criteria:</strong>
+                    <ul>
+                      <li>Basic understanding of web technologies.</li>
+                      <li>Willingness to learn and contribute to real projects.</li>
+                      <li>Good communication and teamwork skills.</li>
+                    </ul>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            {/* Android App Development */}
+            <Col md={6} lg={4} className="mb-4">
+              <Card className="h-100 shadow-sm">
+                <Card.Body>
+                  <Card.Title><i className="fab fa-android me-2"></i>Android App Development</Card.Title>
+                  <Card.Text>
+                    <strong>Job Criteria:</strong>
+                    <ul>
+                      <li>Experience with Java/Kotlin and Android Studio.</li>
+                      <li>Knowledge of app deployment and Play Store guidelines.</li>
+                      <li>Ability to build and maintain native/hybrid apps.</li>
+                    </ul>
+                    <strong>Internship Criteria:</strong>
+                    <ul>
+                      <li>Basic knowledge of Android development.</li>
+                      <li>Eagerness to learn mobile app development.</li>
+                      <li>Team player with problem-solving attitude.</li>
+                    </ul>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            {/* iOS App Development */}
+            <Col md={6} lg={4} className="mb-4">
+              <Card className="h-100 shadow-sm">
+                <Card.Body>
+                  <Card.Title><i className="fab fa-apple me-2"></i>iOS App Development</Card.Title>
+                  <Card.Text>
+                    <strong>Job Criteria:</strong>
+                    <ul>
+                      <li>Proficiency in Swift/Objective-C and Xcode.</li>
+                      <li>Experience with iOS frameworks and App Store deployment.</li>
+                      <li>Strong UI/UX design sense for Apple platforms.</li>
+                    </ul>
+                    <strong>Internship Criteria:</strong>
+                    <ul>
+                      <li>Basic understanding of iOS development.</li>
+                      <li>Interest in building mobile applications.</li>
+                      <li>Good analytical and learning skills.</li>
+                    </ul>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            {/* Desktop Applications */}
+            <Col md={6} lg={4} className="mb-4">
+              <Card className="h-100 shadow-sm">
+                <Card.Body>
+                  <Card.Title><i className="fas fa-desktop me-2"></i>Desktop Applications</Card.Title>
+                  <Card.Text>
+                    <strong>Job Criteria:</strong>
+                    <ul>
+                      <li>Experience with desktop app frameworks (Electron, .NET, etc.).</li>
+                      <li>Ability to develop cross-platform solutions.</li>
+                      <li>Strong debugging and integration skills.</li>
+                    </ul>
+                    <strong>Internship Criteria:</strong>
+                    <ul>
+                      <li>Basic programming knowledge.</li>
+                      <li>Interest in desktop software development.</li>
+                      <li>Willingness to learn new technologies.</li>
+                    </ul>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            {/* Digital Marketing */}
+            <Col md={6} lg={4} className="mb-4">
+              <Card className="h-100 shadow-sm">
+                <Card.Body>
+                  <Card.Title><i className="fas fa-bullhorn me-2"></i>Digital Marketing</Card.Title>
+                  <Card.Text>
+                    <strong>Job Criteria:</strong>
+                    <ul>
+                      <li>Experience with SEO, SEM, and social media campaigns.</li>
+                      <li>Strong analytical and content strategy skills.</li>
+                      <li>Ability to use marketing tools and analytics platforms.</li>
+                    </ul>
+                    <strong>Internship Criteria:</strong>
+                    <ul>
+                      <li>Basic understanding of digital marketing concepts.</li>
+                      <li>Creativity and eagerness to learn marketing strategies.</li>
+                      <li>Good written and verbal communication.</li>
+                    </ul>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            {/* Modernization of Legacy Systems */}
+            <Col md={6} lg={4} className="mb-4">
+              <Card className="h-100 shadow-sm">
+                <Card.Body>
+                  <Card.Title><i className="fas fa-sync-alt me-2"></i>Legacy System Modernization</Card.Title>
+                  <Card.Text>
+                    <strong>Job Criteria:</strong>
+                    <ul>
+                      <li>Experience with code refactoring and system upgrades.</li>
+                      <li>Knowledge of cloud migration and modern tech stacks.</li>
+                      <li>Ability to analyze and improve legacy systems.</li>
+                    </ul>
+                    <strong>Internship Criteria:</strong>
+                    <ul>
+                      <li>Interest in learning about legacy and modern systems.</li>
+                      <li>Basic programming and analytical skills.</li>
+                      <li>Motivation to solve real-world tech challenges.</li>
+                    </ul>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
       {/* Open Positions */}
       <section id="open-positions" className="positions-section py-5">
         <Container>
@@ -239,6 +380,24 @@ const Career = () => {
                   </Accordion.Header>
                   <Accordion.Body>
                     Our hiring process includes application screening, a technical assessment, and interviews with our team. The entire process typically takes 2-3 weeks, and we keep candidates informed at every step.
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="3">
+                  <Accordion.Header>
+                    <i className="fas fa-clipboard-check me-2"></i>
+                    What are the criteria for job applications?
+                  </Accordion.Header>
+                  <Accordion.Body>
+                    We look for candidates with relevant educational background, required experience for the position, and strong problem-solving skills. Specific criteria are listed under each open position. Passion for learning and teamwork are highly valued.
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="4">
+                  <Accordion.Header>
+                    <i className="fas fa-user-graduate me-2"></i>
+                    How can I apply for an internship?
+                  </Accordion.Header>
+                  <Accordion.Body>
+                    Internship opportunities are posted on this page when available. To apply, fill out the application form above and mention 'Internship' in the position field. We welcome students and recent graduates eager to gain hands-on experience.
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>

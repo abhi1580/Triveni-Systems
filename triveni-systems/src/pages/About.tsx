@@ -77,7 +77,7 @@ const About = () => {
           <Row className="justify-content-center">
             <Col md={6} className="mb-4">
               <div className="mission-card text-center p-4">
-                <i className="fas fa-bullseye fa-3x mb-3 text-primary"></i>
+                <i className="fas fa-bullseye fa-2x mb-3 text-primary"></i>
                 <h2 className="section-title">Our Mission</h2>
                 <p className="section-text">
                   To empower businesses with cutting-edge technology solutions that drive growth and efficiency.
@@ -86,7 +86,7 @@ const About = () => {
             </Col>
             <Col md={6} className="mb-4">
               <div className="vision-card text-center p-4">
-                <i className="fas fa-eye fa-3x mb-3 text-primary"></i>
+                <i className="fas fa-eye fa-2x mb-3 text-primary"></i>
                 <h2 className="section-title">Our Vision</h2>
                 <p className="section-text">
                   To be a global leader in IT innovation, delivering sustainable and scalable solutions.
@@ -100,7 +100,7 @@ const About = () => {
       {/* Company Story */}
       <section id="our-story" className="story-section py-5 bg-light">
         <Container>
-          <h2 className="text-center mb-5">Our Journey</h2>
+          <h2 className="text-center mb-1">Our Journey</h2>
           <Row className="justify-content-center">
             <Col lg={8}>
               <div className="story-content">
