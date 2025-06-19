@@ -138,29 +138,7 @@ const Home = () => {
         </Container>
       </section>
       {/* Fixed Contact Button */}
-      <a
-        href="tel:8087992028"
-        className="fixed-contact-btn"
-        style={{
-          position: 'fixed',
-          bottom: '100px',
-          right: '30px',
-          zIndex: 9999,
-          background: '#007bff',
-          color: '#fff',
-          borderRadius: '50px',
-          padding: '15px 25px',
-          boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
-          fontWeight: 'bold',
-          fontSize: '18px',
-          display: 'flex',
-          alignItems: 'center',
-          textDecoration: 'none',
-          gap: '10px',
-        }}
-      >
-        <i className="fas fa-phone"></i>HR 8087992028 
-      </a>
+      
     </div>
   );
 };

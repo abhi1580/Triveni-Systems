@@ -81,9 +81,6 @@
   width: auto;
   display: block;
 }
-.brand {
-  display: none;
-}
 
 .menu {
   display: flex;

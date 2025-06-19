@@ -148,4 +148,6 @@ hr {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
-} 
+}
+
+/* No unused classes found, all are used globally or by convention. */ 

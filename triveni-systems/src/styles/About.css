@@ -86,17 +86,6 @@
   line-height: 1.6;
 }
 
-.future-title {
-  color: var(--primary-blue-dark);
-  font-size: var(--font-size-xl);
-  margin-bottom: var(--spacing-md);
-}
-
-.future-text {
-  color: var(--gray-700);
-  font-size: var(--font-size-base);
-}
-
 /* Values Section */
 .values-section {
   padding: var(--spacing-3xl) 0;
