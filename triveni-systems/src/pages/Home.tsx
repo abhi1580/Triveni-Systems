@@ -14,12 +14,10 @@ const Home = () => {
           <p className="lead mb-4">
             Empowering businesses with innovative, scalable, and cutting-edge IT solutions tailored to your needs.
           </p>
-          <Link to="/services" className="btn btn-primary btn-lg me-3">
+          <Link to="/services" className="btn btn-dark btn-lg me-3">
             <i className="fas fa-cogs me-2"></i>Explore Our Services
           </Link>
-          <Link to="/contact" className="btn btn-secondary btn-lg">
-            <i className="fas fa-envelope me-2"></i>Contact Us
-          </Link>
+         
         </Container>
       </section>
 
