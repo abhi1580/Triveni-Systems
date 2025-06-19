@@ -294,23 +294,21 @@ const Services = () => {
       </section>
 
       {/* Technologies Section */}
-      <section className="tech-stack py-5 ">
+      <section className="apple-tech-section">
         <Container>
           <h2 className="text-center mb-5">Technologies We Use</h2>
-          <div className="tech-categories">
+          <div className="apple-tech-categories">
             {technologyCategories.map((category, categoryIndex) => (
-              <div key={categoryIndex} className="tech-category mb-5">
-                <h3 className="category-title mb-4">{category.category}</h3>
-                <Row className="justify-content-center">
+              <div key={categoryIndex} className="apple-tech-category">
+                <h3 className="apple-tech-category-title">{category.category}</h3>
+                <div className="apple-tech-grid">
                   {category.technologies.map((tech, techIndex) => (
-                    <Col xs={6} sm={4} md={3} lg={2} key={techIndex} className="mb-4">
-                      <div className="tech-item">
-                        <i className={`${tech.icon} tech-icon`}></i>
-                        <span className="tech-name">{tech.name}</span>
-                      </div>
-                    </Col>
+                    <div className="apple-tech-item" key={techIndex}>
+                      <i className={`apple-tech-icon ${tech.icon}`}></i>
+                      <span className="apple-tech-name">{tech.name}</span>
+                    </div>
                   ))}
-                </Row>
+                </div>
               </div>
             ))}
           </div>
