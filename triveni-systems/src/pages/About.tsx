@@ -159,7 +159,51 @@ const About = () => {
                   <h3 className="leader-name">Vikrant Godbole</h3>
                   <p className="leader-position">Founder & CEO</p>
                   <p className="leader-description">
-                    A tech strategist driving product architecture, development, and growth through scalable technologies.
+                    A tech strategist with 6+ years of experience, driving product architecture, development, and growth through scalable technologies.
+                  </p>
+                </div>
+              </div>
+            </Col>
+            <Col md={6} className="mb-4">
+              <div className="leader-card p-4">
+                <div className="leader-info">
+                  <h3 className="leader-name">Nikhil Shetkar</h3>
+                  <p className="leader-position">Operations Manager</p>
+                  <p className="leader-description">
+                    4+ years of experience in operations management, ensuring seamless project delivery and organizational efficiency.
+                  </p>
+                </div>
+              </div>
+            </Col>
+            <Col md={6} className="mb-4">
+              <div className="leader-card p-4">
+                <div className="leader-info">
+                  <h3 className="leader-name">Shubham Ghante</h3>
+                  <p className="leader-position">HR Manager</p>
+                  <p className="leader-description">
+                    5+ years of experience in human resources, fostering a positive workplace culture and managing talent acquisition and development.
+                  </p>
+                </div>
+              </div>
+            </Col>
+            <Col md={6} className="mb-4">
+              <div className="leader-card p-4">
+                <div className="leader-info">
+                  <h3 className="leader-name">Ravi Nelwade</h3>
+                  <p className="leader-position">Technical Lead</p>
+                  <p className="leader-description">
+                    7+ years of experience in software engineering, mentoring teams, and delivering high-quality technical solutions.
+                  </p>
+                </div>
+              </div>
+            </Col>
+            <Col md={6} className="mb-4">
+              <div className="leader-card p-4">
+                <div className="leader-info">
+                  <h3 className="leader-name">Shubham Jangam</h3>
+                  <p className="leader-position">Project Manager</p>
+                  <p className="leader-description">
+                    6+ years of experience in project management, coordinating teams and resources to achieve client goals on time and within scope.
                   </p>
                 </div>
               </div>

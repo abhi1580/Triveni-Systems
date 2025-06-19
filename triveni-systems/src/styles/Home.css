@@ -41,7 +41,7 @@ h2 {
 
 /* Hero Section */
 .hero-section {
-  background-image: url('../assets/images/hero-img.png');
+  background: linear-gradient(135deg, var(--primary-blue-dark), var(--primary-blue));
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
