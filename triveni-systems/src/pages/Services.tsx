@@ -110,25 +110,20 @@ const Services = () => {
       </section>
 
       {/* Services Cards */}
-      <section className="services-section py-5 bg-light">
+      <section className="apple-offer-section">
         <Container>
           <h2 className="text-center mb-5">What We Offer</h2>
-          <Row>
+          <div className="apple-offer-grid">
             {services.map((service, index) => (
-              <Col md={6} lg={4} key={index} className="mb-4">
-                <Card className="h-100 shadow-sm service-card">
-                  <Card.Body>
-                    <Card.Title className="service-title">
-                      <i className={`${service.icon} me-2`}></i>
-                      {service.title}
-                    </Card.Title>
-                    <Card.Text className="service-description">{service.description}</Card.Text>
-                    <Link to="/contact" className="btn btn-link">Learn More</Link>
-                  </Card.Body>
-                </Card>
-              </Col>
+              <div className="apple-offer-card" key={index}>
+                <div className="apple-offer-icon">
+                  <i className={service.icon}></i>
+                </div>
+                <h3 className="apple-offer-title">{service.title}</h3>
+                <p className="apple-offer-desc">{service.description}</p>
+              </div>
             ))}
-          </Row>
+          </div>
         </Container>
       </section>
 
