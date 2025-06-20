@@ -1,250 +1,205 @@
 import { Container, Button, Row, Col, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
-import transparent_image from '../assets/images/transparent_image.jpg';
-
+import heroVideo from '../assets/images/heroVideo.mp4'; // Placeholder for hero video
 const Home = () => {
   return (
     <div className="home-page">
-      {/* Hero Section */}
-      <section className="hero-section text-center text-light py-5">
-       
-        <Container>
-          <h1 className="display-4 fw-bold">Welcome to Triveni Systems</h1>
-          <p className="lead mb-4">
-            Empowering businesses with innovative, scalable, and cutting-edge IT solutions tailored to your needs.
+      {/* Hero Section with Video Background */}
+      <section className="hero-section text-center text-light">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="hero-video"
+          src={heroVideo}
+          aria-hidden="true"
+        />
+        <div className="hero-overlay"></div>
+        <Container className="hero-content">
+          <h1 className="display-3 fw-bold animate__animated animate__fadeIn">
+            Innovate with Triveni Systems
+          </h1>
+          <p className="lead mb-4 animate__animated animate__fadeIn animate__delay-1s">
+            Cutting-edge IT solutions designed to empower your business.
           </p>
-          <Link to="/services" className="btn btn-primary btn-lg me-3">
-            <i className="fas fa-cogs me-2"></i>Explore Our Services
-          </Link>
-         
-        </Container>
-      </section>
-
-      {/* About Us Section */}
-      <section className="about-section py-5 bg-light position-relative">
-        <Container>
-          <Row className="align-items-center">
-            <Col md={6}>
-              <h2 className="mb-4">About Triveni Systems</h2>
-              <p>
-                Triveni Systems is a leading IT solutions provider dedicated to delivering innovative and reliable
-                technology services. With over a decade of experience, we specialize in crafting bespoke solutions that
-                address the unique challenges of businesses across various industries.
-              </p>
-              <p>
-                Our mission is to empower organizations by leveraging the latest technologies, from cloud computing to
-                artificial intelligence, ensuring seamless integration and measurable results.
-              </p>
-            </Col>
-            <Col md={6} className="text-center">
-              <img
-                src={transparent_image}
-                alt="Triveni Systems Team"
-                className="img-fluid rounded shadow"
-                loading="lazy"
-              />
-            </Col>
-          </Row>
-          <div className="text-end mt-4">
-            <Link to="/about" className="btn btn-primary">
-              Know More &rarr;
+          <div className="hero-buttons animate__animated animate__fadeIn animate__delay-2s">
+            <Link to="/services" className="btn btn-primary btn-lg me-3">
+              Explore Services
+            </Link>
+            <Link to="/contact" className="btn btn-outline-light btn-lg">
+              Get in Touch
             </Link>
           </div>
         </Container>
       </section>
 
+      {/* About Us Section */}
+      <section className="about-section py-5 bg-dark text-light">
+        <Container>
+          <Row className="align-items-center">
+            <Col lg={6} className="order-lg-2">
+              <h2 className="mb-4">About Triveni Systems</h2>
+              <p className="text-light">
+                At Triveni Systems, we craft innovative IT solutions with precision and passion. With over a decade of expertise, we deliver tailored technology that drives success across industries.
+              </p>
+              <p className="text-light">
+                From cloud to AI, our solutions are built to integrate seamlessly and deliver measurable impact.
+              </p>
+              <Link to="/about" className="btn btn-outline-light mt-3">
+                Learn More
+              </Link>
+            </Col>
+            <Col lg={6} className="text-center order-lg-1 mb-4 mb-lg-0">
+              <img
+                src="" // Placeholder image
+                alt="Triveni Systems Innovation"
+                className="img-fluid rounded"
+                loading="lazy"
+              />
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
       {/* Services Section */}
-      <section className="services-section py-5">
+      <section className="services-section py-5 bg-light">
         <Container>
           <h2 className="text-center mb-5">Our Services</h2>
           <Row>
-            <Col md={4} className="mb-4">
-              <Card className="h-100 shadow-sm">
-                <Card.Body>
-                  <Card.Title>
-                    <i className="fas fa-laptop-code me-2"></i>Web Development
-                  </Card.Title>
-                  <Card.Text>
-                    We create responsive and high-performing websites using modern technologies to ensure a seamless user experience across all devices.
-                  </Card.Text>
-                  <Link to="/services" className="btn btn-link">Learn More</Link>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md={4} className="mb-4">
-              <Card className="h-100 shadow-sm">
-                <Card.Body>
-                  <Card.Title>
-                    <i className="fab fa-android me-2"></i>Android Applications
-                  </Card.Title>
-                  <Card.Text>
-                    Develop robust Android applications tailored to your business needs, ensuring performance, security, and usability on every device.
-                  </Card.Text>
-                  <Link to="/services" className="btn btn-link">Learn More</Link>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md={4} className="mb-4">
-              <Card className="h-100 shadow-sm">
-                <Card.Body>
-                  <Card.Title>
-                    <i className="fab fa-apple me-2"></i>iOS Applications
-                  </Card.Title>
-                  <Card.Text>
-                    Get high-quality iOS applications that combine sleek design with powerful functionality, built to meet Apple's rigorous standards.
-                  </Card.Text>
-                  <Link to="/services" className="btn btn-link">Learn More</Link>
-                </Card.Body>
-              </Card>
-            </Col>
+            {[
+              {
+                icon: "fas fa-laptop-code",
+                title: "Web Development",
+                text: "Sleek, responsive websites built for performance and user experience.",
+              },
+              {
+                icon: "fab fa-android",
+                title: "Android Applications",
+                text: "Robust apps designed for scalability and seamless functionality.",
+              },
+              {
+                icon: "fab fa-apple",
+                title: "iOS Applications",
+                text: "Premium iOS apps crafted to Apple’s high standards.",
+              },
+            ].map((service, index) => (
+              <Col md={4} className="mb-4" key={index}>
+                <Card className="h-100 border-0 shadow-sm animate__animated animate__fadeInUp" style={{ animationDelay: `${index * 0.2}s` }}>
+                  <Card.Body className="text-center">
+                    <i className={`${service.icon} fa-2x mb-3 text-primary`}></i>
+                    <Card.Title className="fw-bold">{service.title}</Card.Title>
+                    <Card.Text>{service.text}</Card.Text>
+                    <Link to="/services" className="btn btn-link stretched-link">
+                      Learn More
+                    </Link>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
           </Row>
-          <div className="text-center mt-4">
-            <Link to="/services" className="btn btn-primary btn-lg more-services-btn">
-              <i className="fas fa-th-large me-2"></i>View All Services
+          <div className="text-center mt-5">
+            <Link to="/services" className="btn btn-primary btn-lg">
+              View All Services
             </Link>
           </div>
         </Container>
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="why-choose-us py-5 bg-light">
+      <section className="why-choose-us py-5 bg-white">
         <Container>
-          <h2 className="text-center mb-5">Why Choose Triveni Systems?</h2>
-          <Row>
-            <Col md={3} className="text-center mb-4">
-              <i className="fas fa-users fa-3x mb-3 feature-icon"></i>
-              <h4>Expert Team</h4>
-              <p>Our certified professionals bring years of experience to deliver top-notch solutions.</p>
-            </Col>
-            <Col md={3} className="text-center mb-4">
-              <i className="fas fa-rocket fa-3x mb-3 feature-icon"></i>
-              <h4>Innovative Solutions</h4>
-              <p>We stay ahead of the curve, integrating the latest technologies for maximum impact.</p>
-            </Col>
-            <Col md={3} className="text-center mb-4">
-              <i className="fas fa-headset fa-3x mb-3 feature-icon"></i>
-              <h4>24/7 Support</h4>
-              <p>Our dedicated support team is always ready to assist you, day or night.</p>
-            </Col>
-            <Col md={3} className="text-center mb-4">
-              <i className="fas fa-check-circle fa-3x mb-3 feature-icon"></i>
-              <h4>Proven Results</h4>
-              <p>Our solutions have empowered businesses worldwide to achieve their goals.</p>
-            </Col>
+          <h2 className="text-center mb-5">Why Triveni?</h2>
+          <Row className="justify-content-center">
+            {[
+              { icon: "fas fa-users", title: "Expert Team", text: "Certified professionals delivering excellence." },
+              { icon: "fas fa-rocket", title: "Innovation", text: "Cutting-edge tech for maximum impact." },
+              { icon: "fas fa-headset", title: "24/7 Support", text: "Always here to assist you." },
+              { icon: "fas fa-check-circle", title: "Proven Results", text: "Trusted by businesses worldwide." },
+            ].map((feature, index) => (
+              <Col md={3} className="text-center mb-4" key={index}>
+                <i className={`${feature.icon} fa-3x mb-3 text-primary`}></i>
+                <h4 className="fw-bold">{feature.title}</h4>
+                <p>{feature.text}</p>
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
 
       {/* Clients Section */}
-      <section className="clients-section py-5">
+      <section className="clients-section py-5 bg-light">
         <Container>
-          <h2 className="text-center mb-5">Our Clients</h2>
+          <h2 className="text-center mb-5">Trusted By</h2>
           <Row className="justify-content-center">
-            <Col md={3} sm={6} className="mb-4 text-center">
-              <Card className="h-100 shadow-sm">
-                <Card.Body>
-                  <Card.Title><i className="fas fa-building me-2"></i>ABC Corporation</Card.Title>
-                  <Card.Text>Leading manufacturing company trusting us for their digital transformation.</Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md={3} sm={6} className="mb-4 text-center">
-              <Card className="h-100 shadow-sm">
-                <Card.Body>
-                  <Card.Title><i className="fas fa-hospital me-2"></i>HealthPlus</Card.Title>
-                  <Card.Text>Healthcare provider leveraging our IT solutions for better patient care.</Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md={3} sm={6} className="mb-4 text-center">
-              <Card className="h-100 shadow-sm">
-                <Card.Body>
-                  <Card.Title><i className="fas fa-graduation-cap me-2"></i>EduSmart</Card.Title>
-                  <Card.Text>EdTech innovator scaling with our robust platforms and support.</Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md={3} sm={6} className="mb-4 text-center">
-              <Card className="h-100 shadow-sm">
-                <Card.Body>
-                  <Card.Title><i className="fas fa-shopping-cart me-2"></i>ShopEase</Card.Title>
-                  <Card.Text>Retail leader enhancing customer experience through our e-commerce solutions.</Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
+            {[
+              { icon: "fas fa-building", title: "ABC Corporation", text: "Manufacturing leader in digital transformation." },
+              { icon: "fas fa-hospital", title: "HealthPlus", text: "Healthcare provider enhancing patient care." },
+              { icon: "fas fa-graduation-cap", title: "EduSmart", text: "EdTech innovator scaling with us." },
+              { icon: "fas fa-shopping-cart", title: "ShopEase", text: "Retail leader with our e-commerce solutions." },
+            ].map((client, index) => (
+              <Col md={3} sm={6} className="mb-4 text-center" key={index}>
+                <Card className="h-100 border-0 shadow-sm">
+                  <Card.Body>
+                    <i className={`${client.icon} fa-2x mb-3 text-primary`}></i>
+                    <Card.Title className="fw-bold">{client.title}</Card.Title>
+                    <Card.Text>{client.text}</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
 
       {/* Products Section */}
-      <section className="products-section py-5 bg-light">
+      <section className="products-section py-5 bg-dark text-light">
         <Container>
           <h2 className="text-center mb-5">Our Products</h2>
           <Row className="justify-content-center">
-            <Col md={4} sm={6} className="mb-4 text-center">
-              <Card className="h-100 shadow-sm">
-                <Card.Body>
-                  <Card.Title><i className="fas fa-cloud me-2"></i>CloudSuite</Card.Title>
-                  <Card.Text>Comprehensive cloud management platform for businesses of all sizes.</Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md={4} sm={6} className="mb-4 text-center">
-              <Card className="h-100 shadow-sm">
-                <Card.Body>
-                  <Card.Title><i className="fas fa-shield-alt me-2"></i>SecureIT</Card.Title>
-                  <Card.Text>Advanced cybersecurity suite to protect your digital assets 24/7.</Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md={4} sm={6} className="mb-4 text-center">
-              <Card className="h-100 shadow-sm">
-                <Card.Body>
-                  <Card.Title><i className="fas fa-chart-line me-2"></i>InsightPro</Card.Title>
-                  <Card.Text>Powerful analytics tool to drive data-driven decisions and growth.</Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
+            {[
+              { icon: "fas fa-cloud", title: "CloudSuite", text: "Scalable cloud platform for all businesses." },
+              { icon: "fas fa-shield-alt", title: "SecureIT", text: "Advanced cybersecurity for your assets." },
+              { icon: "fas fa-chart-line", title: "InsightPro", text: "Analytics for data-driven growth." },
+            ].map((product, index) => (
+              <Col md={4} sm={6} className="mb-4 text-center" key={index}>
+                <Card className="h-100 border-0 bg-dark text-light">
+                  <Card.Body>
+                    <i className={`${product.icon} fa-2x mb-3 text-primary`}></i>
+                    <Card.Title className="fw-bold">{product.title}</Card.Title>
+                    <Card.Text>{product.text}</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
 
       {/* Investors Corner Section */}
-      <section className="investors-section py-5">
+      <section className="investors-section py-5 bg-light">
         <Container>
-          <h2 className="text-center mb-5">Investors Corner</h2>
+          <h2 className="text-center mb-5">Investors</h2>
           <Row className="justify-content-center">
-            <Col md={4} sm={6} className="mb-4 text-center">
-              <Card className="h-100 shadow-sm">
-                <Card.Body>
-                  <Card.Title><i className="fas fa-newspaper me-2"></i>Latest News</Card.Title>
-                  <Card.Text>Stay updated with our latest financial news, press releases, and announcements for investors.</Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md={4} sm={6} className="mb-4 text-center">
-              <Card className="h-100 shadow-sm">
-                <Card.Body>
-                  <Card.Title><i className="fas fa-file-alt me-2"></i>Reports & Filings</Card.Title>
-                  <Card.Text>Access our annual reports, financial statements, and regulatory filings in one place.</Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md={4} sm={6} className="mb-4 text-center">
-              <Card className="h-100 shadow-sm">
-                <Card.Body>
-                  <Card.Title><i className="fas fa-envelope-open-text me-2"></i>Investor Contact</Card.Title>
-                  <Card.Text>Have questions? Reach out to our investor relations team for more information.</Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
+            {[
+              { icon: "fas fa-newspaper", title: "Latest News", text: "Financial news and announcements." },
+              { icon: "fas fa-file-alt", title: "Reports & Filings", text: "Access our financial documents." },
+              { icon: "fas fa-envelope-open-text", title: "Investor Contact", text: "Reach our investor relations team." },
+            ].map((item, index) => (
+              <Col md={4} sm={6} className="mb-4 text-center" key={index}>
+                <Card className="h-100 border-0 shadow-sm">
+                  <Card.Body>
+                    <i className={`${item.icon} fa-2x mb-3 text-primary`}></i>
+                    <Card.Title className="fw-bold">{item.title}</Card.Title>
+                    <Card.Text>{item.text}</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
-
-      {/* Fixed Contact Button */}
-      
     </div>
   );
 };

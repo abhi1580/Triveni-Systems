@@ -17,10 +17,6 @@ const Navbar = () => {
   const handleToggle = () => setMenuOpen((open) => !open);
   const handleLinkClick = () => setMenuOpen(false);
 
-  // Split navLinks for logo placement
-  const beforeLogo = navLinks.slice(0, 3);
-  const afterLogo = navLinks.slice(3);
-
   return (
     <header className={styles.navbarWrapper}>
       <nav className={styles.navbar}>
@@ -37,32 +33,15 @@ const Navbar = () => {
             <span className={menuOpen ? styles.barOpen : styles.bar}></span>
           </span>
         </button>
+        <NavLink to="/" className={styles.logo} onClick={handleLinkClick} aria-label="Triveni Systems Home">
+          <img src={logo} alt="Triveni Systems Logo" height={24} />
+        </NavLink>
         <div
           className={menuOpen ? `${styles.menu} ${styles.open}` : styles.menu}
           id="navbar-menu"
         >
           <ul className={styles.navLinks}>
-            {beforeLogo.map((link) => (
-              <li key={link.to}>
-                <NavLink
-                  to={link.to}
-                  end={link.end}
-                  className={({ isActive }) =>
-                    isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
-                  }
-                  onClick={handleLinkClick}
-                >
-                  {link.label}
-                </NavLink>
-              </li>
-            ))}
-            {/* Logo in the middle */}
-            <li className={styles.logoNavItem} tabIndex={-1} aria-hidden="true">
-              <NavLink to="/" className={styles.logo} tabIndex={0} onClick={handleLinkClick} aria-label="Home">
-                <img src={logo} alt="Triveni Systems Logo" height={28} />
-              </NavLink>
-            </li>
-            {afterLogo.map((link) => (
+            {navLinks.map((link) => (
               <li key={link.to}>
                 <NavLink
                   to={link.to}
@@ -94,4 +73,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;

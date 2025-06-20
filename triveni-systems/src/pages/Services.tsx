@@ -1,38 +1,39 @@
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../styles/Services.css';
+import heroVideo from '../assets/images/heroVideo.mp4'; // Placeholder for hero video
 
 const services = [
   {
     title: 'Web Development',
-    description: 'Craft sophisticated, responsive websites and web applications with modern design principles.',
+    description: 'Craft responsive, high-performance websites with modern design.',
     icon: 'fas fa-laptop-code',
   },
   {
-    title: 'Android App Development',
-    description: 'Engineer robust, high-performance native and hybrid Android applications tailored to client needs.',
+    title: 'Android Apps',
+    description: 'Build robust, scalable Android applications for any device.',
     icon: 'fab fa-android',
   },
   {
-    title: 'iOS App Development',
-    description: 'Design and develop elegant, feature-rich iOS applications optimized for Apple ecosystems.',
+    title: 'iOS Apps',
+    description: 'Design elegant, feature-rich apps for the Apple ecosystem.',
     icon: 'fab fa-apple',
   },
   {
-    title: 'Desktop Applications',
-    description: 'Deliver scalable and high-efficiency desktop solutions compatible across major operating systems.',
+    title: 'Desktop Apps',
+    description: 'Develop efficient desktop solutions for all platforms.',
     icon: 'fas fa-desktop',
   },
   {
     title: 'Digital Marketing',
-    description: "Elevate your brand's digital footprint through data-driven and strategic marketing initiatives.",
+    description: 'Boost your brand with strategic, data-driven campaigns.',
     icon: 'fas fa-bullhorn',
   },
   {
-    title: 'Modernization of Legacy Systems',
-    description: 'Revitalize and upgrade legacy websites and applications to meet contemporary standards and performance.',
+    title: 'Legacy Modernization',
+    description: 'Upgrade legacy systems for modern performance and scalability.',
     icon: 'fas fa-sync-alt',
-  }
+  },
 ];
 
 const technologyCategories = [
@@ -44,8 +45,8 @@ const technologyCategories = [
       { name: "JavaScript", icon: "fab fa-js" },
       { name: "HTML5", icon: "fab fa-html5" },
       { name: "CSS3", icon: "fab fa-css3-alt" },
-      { name: "Bootstrap", icon: "fab fa-bootstrap" }
-    ]
+      { name: "Bootstrap", icon: "fab fa-bootstrap" },
+    ],
   },
   {
     category: "Backend Development",
@@ -53,16 +54,16 @@ const technologyCategories = [
       { name: "Node.js", icon: "fab fa-node-js" },
       { name: "Python", icon: "fab fa-python" },
       { name: "GraphQL", icon: "fas fa-project-diagram" },
-      { name: "REST APIs", icon: "fas fa-plug" }
-    ]
+      { name: "REST APIs", icon: "fas fa-plug" },
+    ],
   },
   {
     category: "Mobile Development",
     technologies: [
       { name: "Flutter", icon: "fas fa-mobile-alt" },
       { name: "Swift", icon: "fab fa-swift" },
-      { name: "Kotlin", icon: "fab fa-android" }
-    ]
+      { name: "Kotlin", icon: "fab fa-android" },
+    ],
   },
   {
     category: "Database & Cloud",
@@ -70,27 +71,27 @@ const technologyCategories = [
       { name: "MongoDB", icon: "fas fa-database" },
       { name: "MySQL", icon: "fas fa-database" },
       { name: "AWS", icon: "fab fa-aws" },
-      { name: "Azure", icon: "fab fa-microsoft" }
-    ]
+      { name: "Azure", icon: "fab fa-microsoft" },
+    ],
   },
   {
     category: "DevOps & Tools",
     technologies: [
       { name: "Docker", icon: "fab fa-docker" },
       { name: "Kubernetes", icon: "fas fa-cube" },
-      { name: "Git", icon: "fab fa-git-alt" }
-    ]
-  }
+      { name: "Git", icon: "fab fa-git-alt" },
+    ],
+  },
 ];
 
 const testimonials = [
   {
     name: "Rajeev Mehta",
-    feedback: "Triveni Systems completely transformed our online presence. Highly professional and results-driven!",
+    feedback: "Triveni transformed our digital presence with professionalism and precision.",
   },
   {
     name: "Sneha Patel",
-    feedback: "From mobile apps to digital marketing — they handled it all seamlessly. Highly recommended!",
+    feedback: "Seamless mobile apps and marketing solutions. Highly recommended!",
   },
 ];
 
@@ -98,13 +99,29 @@ const Services = () => {
   return (
     <div className="services-page">
       {/* Hero Section */}
-      <section className="hero-section text-center text-light py-5">
-       
-        <Container>
-          <h1 className="display-4 fw-bold">Our Services</h1>
-          <p className="lead mb-4">Comprehensive IT solutions tailored to your business needs.</p>
-          <Link to="/contact" className="btn btn-primary btn-lg">
-            <i className="fas fa-headset me-2"></i>Get a Free Consultation
+      <section className="hero-section text-center text-light">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="hero-video"
+          src={heroVideo}
+          aria-hidden="true"
+        />
+        <div className="hero-overlay"></div>
+        <Container className="hero-content">
+          <h1 className="display-3 fw-bold animate__animated animate__fadeIn">
+            Our Services
+          </h1>
+          <p className="lead mb-4 animate__animated animate__fadeIn animate__delay-1s">
+            Tailored IT solutions to elevate your business.
+          </p>
+          <Link
+            to="/contact"
+            className="btn btn-primary btn-lg animate__animated animate__fadeIn animate__delay-2s"
+          >
+            Get a Free Consultation
           </Link>
         </Container>
       </section>
@@ -112,10 +129,16 @@ const Services = () => {
       {/* Services Cards */}
       <section className="apple-offer-section">
         <Container>
-          <h2 className="text-center mb-5">What We Offer</h2>
+          <h2 className="apple-offer-heading animate__animated animate__fadeIn">
+            What We Offer
+          </h2>
           <div className="apple-offer-grid">
             {services.map((service, index) => (
-              <div className="apple-offer-card" key={index}>
+              <div
+                className="apple-offer-card animate__animated animate__fadeInUp"
+                key={index}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <div className="apple-offer-icon">
                   <i className={service.icon}></i>
                 </div>
@@ -127,168 +150,140 @@ const Services = () => {
         </Container>
       </section>
 
-       {/* Pricing Section: Plans */}
-       <section className="pricing-section py-5 bg-light">
+      {/* Pricing Section: Plans */}
+      <section className="pricing-section py-5 bg-light">
         <Container>
-          <h2 className="text-center mb-5">Pricing Plans</h2>
+          <h2 className="text-center mb-5 animate__animated animate__fadeIn">
+            Pricing Plans
+          </h2>
           <Row className="justify-content-center">
-            <Col md={4} className="mb-4">
-              <Card className="h-100 shadow-sm pricing-card text-center">
-                <Card.Body>
-                  <Card.Title className="mb-3">Basic</Card.Title>
-                  <h3 className="pricing-price mb-3">₹9,999 <small className="text-muted">/project</small></h3>
-                  <ul className="list-unstyled mb-4">
-                    <li>✔ Single Page Website</li>
-                    <li>✔ Responsive Design</li>
-                    <li>✔ Basic SEO</li>
-                    <li>✔ Email Support</li>
-                  </ul>
-                  <Link to="/contact" className="btn btn-outline-primary">Get Started</Link>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md={4} className="mb-4">
-              <Card className="h-100 shadow-sm pricing-card text-center border-primary">
-                <Card.Body>
-                  <Card.Title className="mb-3">Standard</Card.Title>
-                  <h3 className="pricing-price mb-3">₹24,999 <small className="text-muted">/project</small></h3>
-                  <ul className="list-unstyled mb-4">
-                    <li>✔ Multi-Page Website</li>
-                    <li>✔ Responsive Design</li>
-                    <li>✔ Advanced Features</li>
-                    <li>✔ Enhanced SEO</li>
-                    <li>✔ Email Support</li>
-                    <li>✔ 1 Month Free Support</li>
-                  </ul>
-                  <Link to="/contact" className="btn btn-primary">Choose Standard</Link>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md={4} className="mb-4">
-              <Card className="h-100 shadow-sm pricing-card text-center">
-                <Card.Body>
-                  <Card.Title className="mb-3">Premium</Card.Title>
-                  <h3 className="pricing-price mb-3">₹49,999 <small className="text-muted">/project</small></h3>
-                  <ul className="list-unstyled mb-4">
-                  <li>✔ Multi-Page Website</li>
-                  <li>✔ Responsive Design</li>
-                  <li>✔ Advanced Features</li>
-                    <li>✔ Enhanced SEO</li>
-                    <li>✔ Email Support</li>
-                    <li>✔ Custom Solutions</li>
-                    <li>✔ Priority Support</li>
-                    <li>✔ Marketing Integration</li>
-                    <li>✔ 3 Months Free Support</li>
-                  </ul>
-                  <Link to="/contact" className="btn btn-outline-primary">Go Premium</Link>
-                </Card.Body>
-              </Card>
-            </Col>
+            {[
+              {
+                title: "Basic",
+                price: "₹9,999",
+                unit: "/project",
+                features: [
+                  "Single Page Website",
+                  "Responsive Design",
+                  "Basic SEO",
+                  "Email Support",
+                ],
+                button: "btn-outline-primary",
+                buttonText: "Get Started",
+              },
+              {
+                title: "Standard",
+                price: "₹24,999",
+                unit: "/project",
+                features: [
+                  "Multi-Page Website",
+                  "Responsive Design",
+                  "Advanced Features",
+                  "Enhanced SEO",
+                  "Email Support",
+                  "1 Month Free Support",
+                ],
+                button: "btn-primary",
+                buttonText: "Choose Standard",
+              },
+              {
+                title: "Premium",
+                price: "₹49,999",
+                unit: "/project",
+                features: [
+                  "Multi-Page Website",
+                  "Responsive Design",
+                  "Advanced Features",
+                  "Enhanced SEO",
+                  "Email Support",
+                  "Custom Solutions",
+                  "Priority Support",
+                  "Marketing Integration",
+                  "3 Months Free Support",
+                ],
+                button: "btn-outline-primary",
+                buttonText: "Go Premium",
+              },
+            ].map((plan, index) => (
+              <Col md={4} className="mb-4" key={index}>
+                <Card
+                  className={`h-100 pricing-card text-center animate__animated animate__fadeInUp`}
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  <Card.Body>
+                    <Card.Title className="mb-3">{plan.title}</Card.Title>
+                    <h3 className="pricing-price mb-3">
+                      {plan.price} <small className="text-muted">{plan.unit}</small>
+                    </h3>
+                    <ul className="list-unstyled mb-4">
+                      {plan.features.map((feature, idx) => (
+                        <li key={idx}>{feature}</li>
+                      ))}
+                    </ul>
+                    <Link to="/contact" className={`btn ${plan.button}`}>
+                      {plan.buttonText}
+                    </Link>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
 
       {/* Pricing Section: By Service */}
-      <section className="pricing-section py-5 bg-light">
+      <section className="pricing-section py-5 bg-dark text-light">
         <Container>
-          <h2 className="text-center mb-5">Pricing by Service</h2>
+          <h2 className="text-center mb-5 animate__animated animate__fadeIn">
+            Pricing by Service
+          </h2>
           <Row className="justify-content-center">
-            {/* Web Development */}
-            <Col md={4} className="mb-4">
-              <Card className="h-100 shadow-sm pricing-card text-center">
-                <Card.Body>
-                  <Card.Title className="mb-3"><i className="fas fa-laptop-code me-2"></i>Web Development</Card.Title>
-                  <h3 className="pricing-price mb-3">₹9,999+ <small className="text-muted">/project</small></h3>
-                  <ul className="list-unstyled mb-4">
-                    <li>✔ Single/Multi Page Sites</li>
-                    <li>✔ Responsive Design</li>
-                    <li>✔ SEO Optimization</li>
-                    <li>✔ CMS Integration</li>
-                  </ul>
-                  <Link to="/contact" className="btn btn-outline-primary">Get Quote</Link>
-                </Card.Body>
-              </Card>
-            </Col>
-            {/* Android App Development */}
-            <Col md={4} className="mb-4">
-              <Card className="h-100 shadow-sm pricing-card text-center">
-                <Card.Body>
-                  <Card.Title className="mb-3"><i className="fab fa-android me-2"></i>Android App Development</Card.Title>
-                  <h3 className="pricing-price mb-3">₹19,999+ <small className="text-muted">/app</small></h3>
-                  <ul className="list-unstyled mb-4">
-                    <li>✔ Native/Hybrid Apps</li>
-                    <li>✔ Play Store Deployment</li>
-                    <li>✔ UI/UX Design</li>
-                    <li>✔ API Integration</li>
-                  </ul>
-                  <Link to="/contact" className="btn btn-outline-primary">Get Quote</Link>
-                </Card.Body>
-              </Card>
-            </Col>
-            {/* iOS App Development */}
-            <Col md={4} className="mb-4">
-              <Card className="h-100 shadow-sm pricing-card text-center">
-                <Card.Body>
-                  <Card.Title className="mb-3"><i className="fab fa-apple me-2"></i>iOS App Development</Card.Title>
-                  <h3 className="pricing-price mb-3">₹24,999+ <small className="text-muted">/app</small></h3>
-                  <ul className="list-unstyled mb-4">
-                    <li>✔ Native/Hybrid Apps</li>
-                    <li>✔ App Store Deployment</li>
-                    <li>✔ UI/UX Design</li>
-                    <li>✔ API Integration</li>
-                  </ul>
-                  <Link to="/contact" className="btn btn-outline-primary">Get Quote</Link>
-                </Card.Body>
-              </Card>
-            </Col>
-            {/* Desktop Applications */}
-            <Col md={4} className="mb-4">
-              <Card className="h-100 shadow-sm pricing-card text-center">
-                <Card.Body>
-                  <Card.Title className="mb-3"><i className="fas fa-desktop me-2"></i>Desktop Applications</Card.Title>
-                  <h3 className="pricing-price mb-3">₹29,999+ <small className="text-muted">/project</small></h3>
-                  <ul className="list-unstyled mb-4">
-                    <li>✔ Windows/Mac/Linux</li>
-                    <li>✔ Custom Features</li>
-                    <li>✔ Integration & Support</li>
-                    <li>✔ Modern UI</li>
-                  </ul>
-                  <Link to="/contact" className="btn btn-outline-primary">Get Quote</Link>
-                </Card.Body>
-              </Card>
-            </Col>
-            {/* Digital Marketing */}
-            <Col md={4} className="mb-4">
-              <Card className="h-100 shadow-sm pricing-card text-center">
-                <Card.Body>
-                  <Card.Title className="mb-3"><i className="fas fa-bullhorn me-2"></i>Digital Marketing</Card.Title>
-                  <h3 className="pricing-price mb-3">₹7,999+ <small className="text-muted">/month</small></h3>
-                  <ul className="list-unstyled mb-4">
-                    <li>✔ SEO & SEM</li>
-                    <li>✔ Social Media Management</li>
-                    <li>✔ Content Marketing</li>
-                    <li>✔ Analytics & Reporting</li>
-                  </ul>
-                  <Link to="/contact" className="btn btn-outline-primary">Get Quote</Link>
-                </Card.Body>
-              </Card>
-            </Col>
-            {/* Modernization of Legacy Systems */}
-            <Col md={4} className="mb-4">
-              <Card className="h-100 shadow-sm pricing-card text-center">
-                <Card.Body>
-                  <Card.Title className="mb-3"><i className="fas fa-sync-alt me-2"></i>Legacy System Modernization</Card.Title>
-                  <h3 className="pricing-price mb-3">₹14,999+ <small className="text-muted">/project</small></h3>
-                  <ul className="list-unstyled mb-4">
-                    <li>✔ Code Refactoring</li>
-                    <li>✔ UI/UX Upgrade</li>
-                    <li>✔ Performance Boost</li>
-                    <li>✔ Cloud Migration</li>
-                  </ul>
-                  <Link to="/contact" className="btn btn-outline-primary">Get Quote</Link>
-                </Card.Body>
-              </Card>
-            </Col>
+            {services.map((service, index) => (
+              <Col md={4} className="mb-4" key={index}>
+                <Card
+                  className="h-100 pricing-card text-center bg-dark text-light border-0 animate__animated animate__fadeInUp"
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  <Card.Body>
+                    <Card.Title className="mb-3">
+                      <i className={`${service.icon} me-2`}></i>
+                      {service.title}
+                    </Card.Title>
+                    <h3 className="pricing-price mb-3">
+                      {index === 0
+                        ? "₹9,999+"
+                        : index === 1
+                        ? "₹19,999+"
+                        : index === 2
+                        ? "₹24,999+"
+                        : index === 3
+                        ? "₹29,999+"
+                        : index === 4
+                        ? "₹7,999+"
+                        : "₹14,999+"}{" "}
+                      <small className="text-muted">
+                        {index === 4 ? "/month" : index < 4 ? "/app" : "/project"}
+                      </small>
+                    </h3>
+                    <ul className="list-unstyled mb-4">
+                      {[
+                        index === 0 && ["Single/Multi Page Sites", "Responsive Design", "SEO Optimization", "CMS Integration"],
+                        index === 1 && ["Native/Hybrid Apps", "Play Store Deployment", "UI/UX Design", "API Integration"],
+                        index === 2 && ["Native/Hybrid Apps", "App Store Deployment", "UI/UX Design", "API Integration"],
+                        index === 3 && ["Windows/Mac/Linux", "Custom Features", "Integration & Support", "Modern UI"],
+                        index === 4 && ["SEO & SEM", "Social Media Management", "Content Marketing", "Analytics & Reporting"],
+                        index === 5 && ["Code Refactoring", "UI/UX Upgrade", "Performance Boost", "Cloud Migration"],
+                      ][index].map((feature, idx) => (
+                        <li key={idx}>{feature}</li>
+                      ))}
+                    </ul>
+                    <Link to="/contact" className="btn btn-outline-light">
+                      Get Quote
+                    </Link>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
@@ -296,14 +291,23 @@ const Services = () => {
       {/* Technologies Section */}
       <section className="apple-tech-section">
         <Container>
-          <h2 className="text-center mb-5">Technologies We Use</h2>
+          <h2 className="text-center mb-5 animate__animated animate__fadeIn">
+            Technologies We Use
+          </h2>
           <div className="apple-tech-categories">
             {technologyCategories.map((category, categoryIndex) => (
-              <div key={categoryIndex} className="apple-tech-category">
+              <div
+                className="apple-tech-category animate__animated animate__fadeInUp"
+                key={categoryIndex}
+                style={{ animationDelay: `${categoryIndex * 0.2}s` }}
+              >
                 <h3 className="apple-tech-category-title">{category.category}</h3>
                 <div className="apple-tech-grid">
                   {category.technologies.map((tech, techIndex) => (
-                    <div className="apple-tech-item" key={techIndex}>
+                    <div
+                      className="apple-tech-item"
+                      key={techIndex}
+                    >
                       <i className={`apple-tech-icon ${tech.icon}`}></i>
                       <span className="apple-tech-name">{tech.name}</span>
                     </div>
@@ -315,19 +319,21 @@ const Services = () => {
         </Container>
       </section>
 
-     
-
       {/* Testimonials */}
-      <section className="testimonials py-5">
+      <section className="testimonials py-5 bg-light">
         <Container>
-          <h2 className="text-center mb-5">What Our Clients Say</h2>
+          <h2 className="text-center mb-5 animate__animated animate__fadeIn">
+            What Our Clients Say
+          </h2>
           <Row>
             {testimonials.map((testi, idx) => (
               <Col md={6} key={idx} className="mb-4">
-                <Card className="h-100 shadow-sm testimonial-card">
+                <Card
+                  className="h-100 testimonial-card border-0 animate__animated animate__fadeInUp"
+                  style={{ animationDelay: `${idx * 0.2}s` }}
+                >
                   <Card.Body>
                     <blockquote className="blockquote mb-0">
-                      <i className="fas fa-quote-left text-primary mb-3"></i>
                       <p className="testimonial-text">"{testi.feedback}"</p>
                       <footer className="blockquote-footer mt-3">
                         <cite title={testi.name}>{testi.name}</cite>
@@ -342,12 +348,19 @@ const Services = () => {
       </section>
 
       {/* Contact Prompt */}
-      <section className="contact-cta text-center text-white py-5 mb-0">
+      <section className="contact-cta text-center text-light py-5 bg-dark">
         <Container>
-          <h3 className="mb-4">Ready to Elevate Your Digital Presence?</h3>
-          <p className="lead mb-4">Let's discuss how we can bring your vision to life.</p>
-          <Link to="/contact" className="btn btn-light btn-lg">
-            <i className="fas fa-paper-plane me-2"></i>Contact Us
+          <h3 className="mb-4 animate__animated animate__fadeIn">
+            Ready to Elevate Your Business?
+          </h3>
+          <p className="lead mb-4 animate__animated animate__fadeIn animate__delay-1s">
+            Let’s bring your vision to life.
+          </p>
+          <Link
+            to="/contact"
+            className="btn btn-light btn-lg animate__animated animate__fadeIn animate__delay-2s"
+          >
+            Contact Us
           </Link>
         </Container>
       </section>
