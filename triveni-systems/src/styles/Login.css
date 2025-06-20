@@ -2,7 +2,10 @@
   min-height: 60vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background-image:url('../assets/images/loginImg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   padding: 4rem 0;
   margin: 0;
 }
@@ -14,13 +17,18 @@
 }
 
 .login-card {
-  background: rgba(255, 255, 255, 0.95);
+  background: transparent !important;
   border: none;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
+  backdrop-filter: none;
   transition: transform 0.3s ease;
   margin: 1rem 0;
+  
+}
+
+.login-card * {
+  background: transparent !important;
 }
 
 .login-card:hover {
