@@ -49,7 +49,9 @@ interface Payment {
   id: number;
   projectId: number;
   projectName: string;
-  amount: number;
+  projectAmount: number;
+  paidAmount: number;
+  pendingAmount: number;
   status: 'Pending' | 'Paid' | 'Overdue';
   dueDate: string;
 }
@@ -80,9 +82,9 @@ const initialProjects: Project[] = [
 
 // Mock data for payments
 const initialPayments: Payment[] = [
-  { id: 1, projectId: 1, projectName: 'Website Redesign', amount: 5000, status: 'Paid', dueDate: '2025-07-20' },
-  { id: 2, projectId: 2, projectName: 'Mobile App Development', amount: 8000, status: 'Paid', dueDate: '2025-07-10' },
-  { id: 3, projectId: 3, projectName: 'API Integration', amount: 3500, status: 'Pending', dueDate: '2025-08-15' },
+  { id: 1, projectId: 1, projectName: 'Website Redesign', projectAmount: 5000, paidAmount: 5000, pendingAmount: 0, status: 'Paid', dueDate: '2025-07-20' },
+  { id: 2, projectId: 2, projectName: 'Mobile App Development', projectAmount: 8000, paidAmount: 8000, pendingAmount: 0, status: 'Paid', dueDate: '2025-07-10' },
+  { id: 3, projectId: 3, projectName: 'API Integration', projectAmount: 3500, paidAmount: 1500, pendingAmount: 2000, status: 'Pending', dueDate: '2025-08-15' },
 ];
 
 const AdminPanel: React.FC = () => {
@@ -94,7 +96,7 @@ const AdminPanel: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>(initialProjects);
   const [newProject, setNewProject] = useState<{ name: string; status: 'On Hold' | 'In Progress' | 'Completed'; progress: number; deadline: string; }>({ name: '', status: 'In Progress', progress: 0, deadline: '' });
   const [payments, setPayments] = useState<Payment[]>(initialPayments);
-  const [newPayment, setNewPayment] = useState<{ projectId: number, amount: number, status: 'Pending' | 'Paid' | 'Overdue', dueDate: string }>({ projectId: 1, amount: 0, status: 'Pending', dueDate: '' });
+  const [newPayment, setNewPayment] = useState<{ projectId: number, projectAmount: number, paidAmount: number, status: 'Pending' | 'Paid' | 'Overdue', dueDate: string }>({ projectId: 1, projectAmount: 0, paidAmount: 0, status: 'Pending', dueDate: '' });
 
   const handleLogout = () => {
     logout();
@@ -119,16 +121,22 @@ const AdminPanel: React.FC = () => {
 
   const handleAddPayment = (e: React.FormEvent) => {
     e.preventDefault();
-    if (newPayment.projectId && newPayment.amount && newPayment.dueDate) {
+    if (newPayment.projectId && newPayment.projectAmount && newPayment.dueDate) {
       const project = projects.find(p => p.id === Number(newPayment.projectId));
       if (project) {
+        const projectAmount = Number(newPayment.projectAmount);
+        const paidAmount = Number(newPayment.paidAmount);
         setPayments([...payments, {
-          ...newPayment,
           id: payments.length + 1,
+          projectId: newPayment.projectId,
           projectName: project.name,
-          amount: Number(newPayment.amount)
+          projectAmount,
+          paidAmount,
+          pendingAmount: projectAmount - paidAmount,
+          status: newPayment.status,
+          dueDate: newPayment.dueDate,
         }]);
-        setNewPayment({ projectId: 1, amount: 0, status: 'Pending', dueDate: '' });
+        setNewPayment({ projectId: 1, projectAmount: 0, paidAmount: 0, status: 'Pending', dueDate: '' });
       }
     }
   };
@@ -267,7 +275,7 @@ const AdminPanel: React.FC = () => {
                   <Card.Body>
                     <Card.Title>Total Revenue</Card.Title>
                     <Card.Text className="display-6 text-success">
-                      ₹{payments.filter(p => p.status === 'Paid').reduce((acc, p) => acc + p.amount, 0)}
+                      ₹{payments.reduce((acc, p) => acc + p.paidAmount, 0)}
                     </Card.Text>
                   </Card.Body>
                 </Card>
@@ -557,7 +565,7 @@ const AdminPanel: React.FC = () => {
                   <Card.Body>
                     <Card.Title>Project Amount</Card.Title>
                     <Card.Text className="display-6 text-primary">
-                      ₹{payments.reduce((acc, p) => acc + p.amount, 0)}
+                      ₹{payments.reduce((acc, p) => acc + p.projectAmount, 0)}
                     </Card.Text>
                   </Card.Body>
                 </Card>
@@ -567,7 +575,7 @@ const AdminPanel: React.FC = () => {
                   <Card.Body>
                     <Card.Title>Paid</Card.Title>
                     <Card.Text className="display-6 text-success">
-                      ₹{payments.filter(p => p.status === 'Paid').reduce((acc, p) => acc + p.amount, 0)}
+                      ₹{payments.reduce((acc, p) => acc + p.paidAmount, 0)}
                     </Card.Text>
                   </Card.Body>
                 </Card>
@@ -577,7 +585,7 @@ const AdminPanel: React.FC = () => {
                   <Card.Body>
                     <Card.Title>Pending</Card.Title>
                     <Card.Text className="display-6 text-warning">
-                      ₹{payments.filter(p => p.status === 'Pending' || p.status === 'Overdue').reduce((acc, p) => acc + p.amount, 0)}
+                      ₹{payments.reduce((acc, p) => acc + p.pendingAmount, 0)}
                     </Card.Text>
                   </Card.Body>
                 </Card>
@@ -590,7 +598,7 @@ const AdminPanel: React.FC = () => {
                 <h4 className="mb-3">Add New Payment</h4>
                 <Form onSubmit={handleAddPayment}>
                   <Row className="align-items-end">
-                    <Col md={4}>
+                    <Col md={2}>
                       <Form.Group>
                         <Form.Label>Project</Form.Label>
                         <Form.Select
@@ -606,12 +614,24 @@ const AdminPanel: React.FC = () => {
                     </Col>
                     <Col md={2}>
                       <Form.Group>
-                        <Form.Label>Amount (₹)</Form.Label>
+                        <Form.Label>Project Amount (₹)</Form.Label>
                         <Form.Control
                           type="number"
                           placeholder="Enter amount"
-                          value={newPayment.amount}
-                          onChange={(e) => setNewPayment({ ...newPayment, amount: Number(e.target.value) })}
+                          value={newPayment.projectAmount}
+                          onChange={(e) => setNewPayment({ ...newPayment, projectAmount: Number(e.target.value) })}
+                          required
+                        />
+                      </Form.Group>
+                    </Col>
+                    <Col md={2}>
+                      <Form.Group>
+                        <Form.Label>Paid Amount (₹)</Form.Label>
+                        <Form.Control
+                          type="number"
+                          placeholder="Enter amount"
+                          value={newPayment.paidAmount}
+                          onChange={(e) => setNewPayment({ ...newPayment, paidAmount: Number(e.target.value) })}
                           required
                         />
                       </Form.Group>
@@ -656,7 +676,9 @@ const AdminPanel: React.FC = () => {
                 <tr>
                   <th>ID</th>
                   <th>Project Name</th>
-                  <th>Amount</th>
+                  <th>Project Amount</th>
+                  <th>Paid Amount</th>
+                  <th>Pending Amount</th>
                   <th>Status</th>
                   <th>Due Date</th>
                 </tr>
@@ -666,7 +688,9 @@ const AdminPanel: React.FC = () => {
                   <tr key={payment.id}>
                     <td>{payment.id}</td>
                     <td>{payment.projectName}</td>
-                    <td>₹{payment.amount.toFixed(2)}</td>
+                    <td>₹{payment.projectAmount.toFixed(2)}</td>
+                    <td>₹{payment.paidAmount.toFixed(2)}</td>
+                    <td>₹{payment.pendingAmount.toFixed(2)}</td>
                     <td>
                       <span className={`badge bg-${payment.status === 'Paid' ? 'success' : payment.status === 'Pending' ? 'warning' : 'danger'}`}>
                         {payment.status}
