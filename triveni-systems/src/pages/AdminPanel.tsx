@@ -18,6 +18,7 @@ interface Contact {
   name: string;
   email: string;
   phone: string;
+  message: string;
 }
 
 interface ServiceRequest {
@@ -58,8 +59,8 @@ interface Payment {
 
 // Mock data for new sections
 const contacts: Contact[] = [
-  { id: 1, name: 'Alice Brown', email: 'alice@example.com', phone: '123-456-7890' },
-  { id: 2, name: 'Bob Wilson', email: 'bob@example.com', phone: '098-765-4321' },
+  { id: 1, name: 'Alice Brown', email: 'alice@example.com', phone: '123-456-7890', message: 'Interested in your services.' },
+  { id: 2, name: 'Bob Wilson', email: 'bob@example.com', phone: '098-765-4321', message: 'Inquiry about pricing.' },
 ];
 
 const serviceRequests: ServiceRequest[] = [
@@ -327,6 +328,7 @@ const AdminPanel: React.FC = () => {
                   <th>Name</th>
                   <th>Email</th>
                   <th>Phone</th>
+                  <th>Message</th>
                 </tr>
               </thead>
               <tbody>
@@ -335,6 +337,7 @@ const AdminPanel: React.FC = () => {
                     <td>{contact.name}</td>
                     <td>{contact.email}</td>
                     <td>{contact.phone}</td>
+                    <td>{contact.message}</td>
                   </tr>
                 ))}
               </tbody>
