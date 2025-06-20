@@ -1,24 +1,88 @@
+/* Apple-inspired styles to complement React Bootstrap */
 .admin-panel {
   background-color: #f8f9fa;
   min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .admin-panel h2 {
-  font-weight: bold;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: #1d1d1f;
 }
 
 .admin-panel h3 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: #1d1d1f;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #d2d2d7;
+}
+
+.nav-tabs .nav-link {
+  color: #6e6e73;
+  font-weight: 500;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+}
+
+.nav-tabs .nav-link.active {
+  color: #0071e3;
+  border-bottom: 2px solid #0071e3;
+}
+
+.nav-tabs .nav-link:hover {
+  color: #0071e3;
 }
 
 .table th,
 .table td {
   vertical-align: middle;
+  color: #1d1d1f;
+}
+
+.table thead th {
+  background-color: #f5f5f7;
+  color: #6e6e73;
+  font-weight: 500;
+}
+
+.logout-btn {
+  border-radius: 980px;
+  font-weight: 400;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #d00000;
+}
+
+.display-6 {
+  font-weight: 300;
+  color: #0071e3;
 }
 
 @media (max-width: 768px) {
   .admin-panel h2 {
     font-size: 1.5rem;
+  }
+
+  .admin-panel h3 {
+    font-size: 1.25rem;
+  }
+
+  .nav-tabs .nav-link {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
   }
 }
