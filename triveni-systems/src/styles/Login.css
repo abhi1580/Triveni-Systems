@@ -18,17 +18,18 @@
 
 .login-card {
   background: transparent !important;
+  color: #fff;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
   transition: transform 0.3s ease;
   margin: 1rem 0;
-  
 }
 
 .login-card * {
   background: transparent !important;
+  color: inherit;
 }
 
 .login-card:hover {
@@ -79,16 +80,18 @@
 }
 
 .login-button {
-  background: var(--primary-color);
+  background: #222 !important;
   border: none;
   padding: 0.75rem 1.5rem;
   font-weight: 500;
   font-size: 1rem;
+  color: #fff;
   transition: all 0.3s ease;
 }
 
 .login-button:hover {
-  background: var(--secondary-color);
+  background: #111 !important;
+  color: #fff;
   transform: translateY(-2px);
 }
 
@@ -96,6 +99,18 @@
   color: var(--gray-600);
   font-size: 0.9rem;
   margin: 0;
+}
+
+/* Position login card to the right on larger screens */
+@media (min-width: 992px) {
+  .login-container {
+    margin-left: auto;
+    margin-right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 70vh;
+  }
 }
 
 /* Responsive adjustments */
