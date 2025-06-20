@@ -7,7 +7,7 @@ const Footer = () => {
       <Container fluid>
         <Row className="py-8">
           <Col md={3} className="mb-6">
-            <h5 className="footer-group-title">Triveni Systems</h5>
+            <h5 className="footer-group-title">Triveni Systems Pvt. Ltd.</h5>
             <p className="footer-company-text">At Triveni Systems, we deliver innovative IT solutions designed for today's digital world. From web and mobile development to enterprise software, we help businesses thrive through smart, scalable technology. Our focus is on driving efficiency, growth, and digital transformation.</p>
           </Col>
           <Col md={3} className="mb-6">
