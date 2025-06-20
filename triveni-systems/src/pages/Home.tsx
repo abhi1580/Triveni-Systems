@@ -1,7 +1,9 @@
 import { Container, Button, Row, Col, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
-import heroVideo from '../assets/images/heroVideo.mp4'; // Placeholder for hero video
+import heroVideo from '../assets/images/heroVideo.mp4';
+import logo from '../assets/images/logo.png';
+ // Placeholder for hero video
 const Home = () => {
   return (
     <div className="home-page">
@@ -52,12 +54,12 @@ const Home = () => {
               </Link>
             </Col>
             <Col lg={6} className="text-center order-lg-1 mb-4 mb-lg-0">
-              <img
-                src="" // Placeholder image
-                alt="Triveni Systems Innovation"
-                className="img-fluid rounded"
-                loading="lazy"
-              />
+            <img
+  src={logo}
+  alt="Triveni Systems Innovation"
+  className="img-fluid rounded"
+  loading="lazy"
+/>
             </Col>
           </Row>
         </Container>
