@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Container, Form, Button, Alert, Card, Accordion, Row, Col } from 'react-bootstrap';
+import { Container, Form, Button, Alert, Row, Col, Card, Accordion } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { applicants } from '../data/applicants';
 import '../styles/Career.css';
@@ -9,11 +9,11 @@ const Career = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [position, setPosition] = useState('');
-  const [resume, setResume] = useState(null);
+  const [resume, setResume] = useState<File | null>(null);
   const [success, setSuccess] = useState('');
   const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!name || !email || !position || !resume) {
       setError('Please fill in all fields');
@@ -342,8 +342,8 @@ const Career = () => {
                       <Form.Control
                         type="file"
                         accept=".pdf"
-                        onChange={(e) => {
-                          const target = e.target;
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                          const target = e.target as HTMLInputElement;
                           if (target.files && target.files[0]) {
                             setResume(target.files[0]);
                           }

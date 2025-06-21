@@ -1,4 +1,4 @@
-import { Container, Button, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../styles/Home.css';
 import heroVideo from '../assets/images/heroVideo.mp4';

@@ -3,7 +3,28 @@ import { Link } from 'react-router-dom';
 import '../styles/Services.css';
 import heroVideo from '../assets/images/heroVideo.mp4'; // Placeholder for hero video
 
-const services = [
+interface Service {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+interface Technology {
+  name: string;
+  icon: string;
+}
+
+interface TechnologyCategory {
+  category: string;
+  technologies: Technology[];
+}
+
+interface Testimonial {
+  name: string;
+  feedback: string;
+}
+
+const services: Service[] = [
   {
     title: 'Web Development',
     description: 'Craft responsive, high-performance websites with modern design.',
@@ -36,7 +57,7 @@ const services = [
   },
 ];
 
-const technologyCategories = [
+const technologyCategories: TechnologyCategory[] = [
   {
     category: "Frontend Development",
     technologies: [
@@ -84,7 +105,7 @@ const technologyCategories = [
   },
 ];
 
-const testimonials = [
+const testimonials: Testimonial[] = [
   {
     name: "Rajeev Mehta",
     feedback: "Triveni transformed our digital presence with professionalism and precision.",
@@ -267,13 +288,13 @@ const Services = () => {
                     </h3>
                     <ul className="list-unstyled mb-4">
                       {[
-                        index === 0 && ["Single/Multi Page Sites", "Responsive Design", "SEO Optimization", "CMS Integration"],
-                        index === 1 && ["Native/Hybrid Apps", "Play Store Deployment", "UI/UX Design", "API Integration"],
-                        index === 2 && ["Native/Hybrid Apps", "App Store Deployment", "UI/UX Design", "API Integration"],
-                        index === 3 && ["Windows/Mac/Linux", "Custom Features", "Integration & Support", "Modern UI"],
-                        index === 4 && ["SEO & SEM", "Social Media Management", "Content Marketing", "Analytics & Reporting"],
-                        index === 5 && ["Code Refactoring", "UI/UX Upgrade", "Performance Boost", "Cloud Migration"],
-                      ][index].map((feature, idx) => (
+                        index === 0 ? ["Single/Multi Page Sites", "Responsive Design", "SEO Optimization", "CMS Integration"] : [],
+                        index === 1 ? ["Native/Hybrid Apps", "Play Store Deployment", "UI/UX Design", "API Integration"] : [],
+                        index === 2 ? ["Native/Hybrid Apps", "App Store Deployment", "UI/UX Design", "API Integration"] : [],
+                        index === 3 ? ["Windows/Mac/Linux", "Custom Features", "Integration & Support", "Modern UI"] : [],
+                        index === 4 ? ["SEO & SEM", "Social Media Management", "Content Marketing", "Analytics & Reporting"] : [],
+                        index === 5 ? ["Code Refactoring", "UI/UX Upgrade", "Performance Boost", "Cloud Migration"] : [],
+                      ][index].map((feature: string, idx: number) => (
                         <li key={idx}>{feature}</li>
                       ))}
                     </ul>
