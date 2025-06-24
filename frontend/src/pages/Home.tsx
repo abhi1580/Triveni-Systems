@@ -57,7 +57,7 @@ const Home = () => {
             <img
   src={logo}
   alt="Triveni Systems Innovation"
-  className="img-fluid rounded"
+  className="img-fluid rounded about-logo"
   loading="lazy"
 />
             </Col>
@@ -84,7 +84,7 @@ const Home = () => {
               {
                 icon: "fab fa-apple",
                 title: "iOS Applications",
-                text: "Premium iOS apps crafted to Apple’s high standards.",
+                text: "Premium iOS apps crafted to Apple's high standards.",
               },
             ].map((service, index) => (
               <Col md={4} className="mb-4" key={index}>

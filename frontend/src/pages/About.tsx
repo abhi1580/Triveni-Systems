@@ -88,12 +88,12 @@ const About = () => {
               {
                 title: 'Our Mission',
                 icon: 'fas fa-bullseye',
-                text: 'Empowering businesses with cutting-edge technology.',
+                text: 'At Triveni Systems Pvt. Ltd. our mission is to deliver innovative and reliable IT solutions that empower businesses to thrive in the digital age. We are committed to excellence in technology, driven by a passion for quality, customer satisfaction, and long-term partnerships. By leveraging cutting-edge tools and a skilled team, we aim to provide scalable, secure, and customized software, web, and digital solutions that add real value to our clients success.',
               },
               {
                 title: 'Our Vision',
                 icon: 'fas fa-eye',
-                text: 'Leading global IT innovation with scalable solutions.',
+                text: 'Our vision at Triveni Systems Pvt. Ltd. is to be a globally recognized leader in the IT industry, known for innovation, integrity, and excellence. We aspire to shape the future of technology by delivering transformative digital solutions that simplify business processes, enhance productivity, and drive growth. Through continuous learning, adaptability, and a client-centric approach, we aim to build a smarter, more connected world.',
               },
             ].map((item, idx) => (
               <Col md={6} className="mb-4" key={idx}>
@@ -121,12 +121,12 @@ const About = () => {
             <Col lg={8}>
               <div className="story-content animate__animated animate__fadeInUp">
                 <p className="story-text">
-                  Founded in 2020, Triveni Systems started as a small team passionate about tech. Today, we deliver web, mobile, desktop, and digital solutions to clients worldwide, driven by innovation and integrity.
+                  Founded in 2025, Triveni Systems started as a small team passionate about tech. Today, we deliver web, mobile, desktop, and digital solutions to clients worldwide, driven by innovation and integrity.
                 </p>
                 <div className="future-plans mt-4">
                   <h3 className="future-title">Looking Ahead</h3>
                   <p className="future-text">
-                    We’re investing in AI, IoT, and cloud solutions to transform industries, with plans for innovation labs and global expansion.
+                    We're investing in AI, IoT, and cloud solutions to transform industries, with plans for innovation labs and global expansion.
                   </p>
                 </div>
               </div>
@@ -162,40 +162,41 @@ const About = () => {
       <section className="leadership-section py-5 bg-light">
         <Container>
           <h2 className="text-center mb-5 animate__animated animate__fadeIn">
-            Leadership
+            Our Team
           </h2>
           <Row className="justify-content-center">
             {[
               {
                 name: 'Abhay Panchal',
-                position: 'Founder & CEO',
-                description: 'Visionary leader with 5+ years in IT consulting, guiding with innovation.',
+                position: 'Backend Developer',
+                description: 'Experienced in building robust APIs, databases, and server-side logic with 5+ years in backend development.',
               },
               {
                 name: 'Vikrant Godbole',
-                position: 'Founder & CEO',
-                description: 'Tech strategist with 6+ years, driving scalable product development.',
+                position: 'Frontend Developer',
+                description: 'Specialist in responsive UI development with 6+ years crafting seamless and dynamic user experiences.',
               },
               {
                 name: 'Nikhil Shetkar',
-                position: 'Operations Manager',
-                description: '4+ years ensuring seamless project delivery and efficiency.',
+                position: 'SEO Specialist',
+                description: 'Expert in search engine optimization with 5+ years enhancing visibility, traffic, and online performance.',
               },
               {
                 name: 'Shubham Ghante',
-                position: 'HR Manager',
-                description: '5+ years fostering positive culture and talent development.',
+                position: 'Tester',
+                description: 'Detail-oriented QA professional with 5+ years ensuring software reliability through manual and automated testing.',
               },
               {
                 name: 'Ravi Nelwade',
-                position: 'Technical Lead',
-                description: '7+ years mentoring teams and delivering quality solutions.',
+                position: 'UI/UX Designer',
+                description: 'Creative designer with 7+ years crafting intuitive interfaces and enhancing user experience.',
               },
               {
                 name: 'Shubham Jangam',
-                position: 'Project Manager',
-                description: '6+ years coordinating teams to meet client goals.',
-              },
+                position: 'DevOps Engineer',
+                description: 'DevOps expert with 6+ years streamlining CI/CD pipelines and optimizing infrastructure deployment.',
+              }
+              
             ].map((leader, idx) => (
               <Col md={6} className="mb-4" key={idx}>
                 <div
@@ -244,7 +245,7 @@ const About = () => {
             Work with Us
           </h3>
           <p className="lead mb-4 animate__animated animate__fadeIn animate__delay-1s">
-            Let’s connect as a client or candidate.
+            Let's connect as a client or candidate.
           </p>
           <Link
             to="/contact"

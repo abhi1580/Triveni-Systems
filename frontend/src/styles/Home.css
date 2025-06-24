@@ -2,9 +2,9 @@
 :root {
   --primary-dark: #000000; /* Black for headers and accents */
   --primary-light: #ffffff; /* White for backgrounds and text */
-  --accent-gray: #6e6e73; /* Apple’s neutral gray */
-  --accent-blue: #0071e3; /* Apple’s signature blue */
-  --off-white: #f5f5f7; /* Apple’s light background */
+  --accent-gray: #6e6e73; /* Apple's neutral gray */
+  --accent-blue: #0071e3; /* Apple's signature blue */
+  --off-white: #f5f5f7; /* Apple's light background */
   --gray-100: #f5f5f7; /* Light background */
   --gray-200: #e8e8ed; /* Slightly darker gray */
   --gray-700: #1d1d1f; /* Dark text */
@@ -359,15 +359,16 @@ h2 {
 
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 50vh;
+    min-height: 60vh;
   }
-
   .hero-section h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
-
   .why-choose-us .col-md-3 {
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: 2rem;
+  }
+  .about-logo {
+    display: none;
   }
 }
 
